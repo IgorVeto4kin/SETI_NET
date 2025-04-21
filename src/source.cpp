@@ -3,24 +3,50 @@
 #include <QLabel>   
 #include <QVBoxLayout>
 #include <QPushButton>
-
+#include <QCoreApplication>  
+#include <QDebug>           
+#include <QHostAddress>     
+#include <QNetworkInterface> 
 
 
 #include <iostream>
 #include <cstdio>
 #include <string>
-struct ipv4{};
 
-struct ipv6{};
+
+
+void printAllIPv4Addresses() {
+    const QHostAddress localhost = QHostAddress(QHostAddress::LocalHost);
+    for (const QHostAddress &address : QNetworkInterface::allAddresses()) {
+        if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
+            qDebug() << "-" << address.toString();
+            
+            
+            
+            
+        }
+    }
+}
+
 
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);  
     QMainWindow window;  
     window.setWindowTitle("SETI NET");
-    window.resize(500, 500);   
+    window.resize(500, 500); 
 
-    
+    QString CurrentAddress;
+    const QHostAddress localhost = QHostAddress(QHostAddress::LocalHost);
+    for (const QHostAddress &address : QNetworkInterface::allAddresses()) {
+        if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
+            CurrentAddress = address.toString();
+            
+            
+            
+            
+        }
+    }
 
     QWidget *centralWidget = new QWidget(&window);  
     QVBoxLayout *layout = new QVBoxLayout(centralWidget);  
@@ -32,8 +58,9 @@ int main(int argc, char *argv[]) {
     QPushButton *button = new QPushButton("тык", centralWidget);
     button->setFixedSize(150, 30);  
 
-    
-    layout->addWidget(new QLabel("Ваш IP-адрес: 192:168:228:228", centralWidget));
+   
+
+    layout->addWidget(new QLabel("Ваш IP-адрес: " + CurrentAddress,centralWidget));
     layout->addWidget(new QLabel("Ещё информация", centralWidget));
     layout->addSpacing(20); 
 
@@ -41,7 +68,8 @@ int main(int argc, char *argv[]) {
     layout->addStretch();
 
     QObject::connect(button, &QPushButton::clicked, []() {
-        std::cout<<"он нажал кнопку"<<std::endl;    
+        std::cout<<"он нажал кнопку"<<std::endl;  
+         
     });
 
 
