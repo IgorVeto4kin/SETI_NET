@@ -8,27 +8,9 @@
 #include <QHostAddress>     
 #include <QNetworkInterface> 
 
-
 #include <iostream>
 #include <cstdio>
 #include <string>
-
-
-
-void printAllIPv4Addresses() {
-    const QHostAddress localhost = QHostAddress(QHostAddress::LocalHost);
-    for (const QHostAddress &address : QNetworkInterface::allAddresses()) {
-        if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
-            qDebug() << "-" << address.toString();
-            
-            
-            
-            
-        }
-    }
-}
-
-
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);  
@@ -40,11 +22,7 @@ int main(int argc, char *argv[]) {
     const QHostAddress localhost = QHostAddress(QHostAddress::LocalHost);
     for (const QHostAddress &address : QNetworkInterface::allAddresses()) {
         if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
-            CurrentAddress = address.toString();
-            
-            
-            
-            
+            CurrentAddress = address.toString();          
         }
     }
 
@@ -55,19 +33,21 @@ int main(int argc, char *argv[]) {
     layout->setContentsMargins(20, 20, 0, 0);  
     layout->setAlignment(Qt::AlignTop | Qt::AlignLeft); 
 
-    QPushButton *button = new QPushButton("тык", centralWidget);
-    button->setFixedSize(150, 30);  
+    QPushButton *Signbutton = new QPushButton("тык", centralWidget);
+    QPushButton *Exitbutton = new QPushButton("exit", centralWidget);
+    Signbutton->setFixedSize(150, 30);   
+    Exitbutton->setFixedSize(150, 30);   
 
-   
 
     layout->addWidget(new QLabel("Ваш IP-адрес: " + CurrentAddress,centralWidget));
     layout->addWidget(new QLabel("Ещё информация", centralWidget));
     layout->addSpacing(20); 
 
-    layout->addWidget(button);
+    layout->addWidget(Signbutton);
+    layout->addWidget(Exitbutton);
     layout->addStretch();
 
-    QObject::connect(button, &QPushButton::clicked, []() {
+    QObject::connect(Signbutton, &QPushButton::clicked, []() {
         std::cout<<"он нажал кнопку"<<std::endl;  
          
     });
