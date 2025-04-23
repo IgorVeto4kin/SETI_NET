@@ -1,0 +1,116 @@
+#include <QApplication>
+#include <QMainWindow>
+#include <QLabel>   
+#include <QVBoxLayout>
+
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);  
+    QMainWindow window;  
+    window.setWindowTitle("SETI NET");
+    window.resize(500, 500);   
+
+
+    QWidget *centralWidget = new QWidget(&window);  
+    QVBoxLayout *layout = new QVBoxLayout(centralWidget);  
+    layout->setSpacing(0);  
+    layout->setContentsMargins(0, 0, 0, 0);  
+    layout->addWidget(new QLabel("Ваш IP-адрес: 192:168:228:228", centralWidget));
+    layout->addWidget(new QLabel("По моим рассчетам вы лох", centralWidget));
+    
+    window.setCentralWidget(centralWidget);  
+
+
+
+    window.show();  
+    return app.exec();  
+}
+
+
+
+
+#include <iostream>
+#include <cstdio>
+#include <string>
+
+#include <regex>
+
+int main() {
+   
+    struct ipv4{};
+
+    struct ipv6{};
+
+    FILE* pipe = popen("cat pipe_communication.cpp", "r");
+    
+
+   
+    char buffer[128];
+    std::string result;
+
+  
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+        result += buffer; 
+    }
+pclose(pipe);
+
+   
+    std::cout << result << std::endl;
+
+    return 0;
+}	
+
+
+
+const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
+for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
+    if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost)
+         qDebug() << address.toString();
+}const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
+for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
+    if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost)
+         qDebug() << address.toString();
+         
+         
+         
+         
+         
+         
+         
+          const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
+for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
+    if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost)
+         qDebug() << address.toString();
+}const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
+for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
+    if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost)
+         qDebug() << address.toString();
+}
+
+
+
+
+void printAllIPv4Addresses() {
+    const QHostAddress localhost = QHostAddress(QHostAddress::LocalHost);
+    
+    qDebug() << "Available IPv4 addresses:";
+    for (const QHostAddress &address : QNetworkInterface::allAddresses()) {
+        if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
+            qDebug() << "-" << address.toString();
+            
+            // Optional: Get interface details for this address
+            QNetworkInterface interface = QNetworkInterface::interfaceFromIndex(
+                address.scopeId());
+            if (interface.isValid()) {
+                qDebug() << "  Interface:" << interface.humanReadableName();
+            }
+        }
+    }
+}
+
+int main(int argc, char *argv[]) {
+    QCoreApplication a(argc, argv);
+    
+    printAllIPv4Addresses();
+    
+    return a.exec();
+} 
