@@ -18,14 +18,6 @@ int main(int argc, char *argv[]) {
     window.setWindowTitle("SETI NET");
     window.resize(500, 500); 
 
-    QString CurrentAddress;
-    const QHostAddress localhost = QHostAddress(QHostAddress::LocalHost);
-    for (const QHostAddress &address : QNetworkInterface::allAddresses()) {
-        if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
-            CurrentAddress = address.toString();          
-        }
-    }
-
     QWidget *centralWidget = new QWidget(&window);  
     QVBoxLayout *layout = new QVBoxLayout(centralWidget);  
     
@@ -33,25 +25,34 @@ int main(int argc, char *argv[]) {
     layout->setContentsMargins(20, 20, 0, 0);  
     layout->setAlignment(Qt::AlignTop | Qt::AlignLeft); 
 
-    QPushButton *Signbutton = new QPushButton("тык", centralWidget);
     QPushButton *Exitbutton = new QPushButton("exit", centralWidget);
-    Signbutton->setFixedSize(150, 30);   
     Exitbutton->setFixedSize(150, 30);   
 
+    QStringList addressesInfo; 
+    for (const QNetworkInterface &interface : QNetworkInterface::allInterfaces()) {
+        for (const QNetworkAddressEntry &entry : interface.addressEntries() ) {
+            if (entry.ip().protocol() == QAbstractSocket::IPv4Protocol  ) {
+                addressesInfo << QString("IP-address: %1 \n Subnet mask: %2 \n Interface: %3  \n")
+                    .arg(entry.ip().toString())
+                    .arg(entry.netmask().toString())
+                    .arg(interface.name());
+            }
+        }
+    }
 
-    layout->addWidget(new QLabel("Ваш IP-адрес: " + CurrentAddress,centralWidget));
-    layout->addWidget(new QLabel("Ещё информация", centralWidget));
+
+    for (const QString &info : addressesInfo) {
+        layout->addWidget(new QLabel(info, centralWidget));
+    }
+
     layout->addSpacing(20); 
 
-    layout->addWidget(Signbutton);
     layout->addWidget(Exitbutton);
     layout->addStretch();
 
-    QObject::connect(Signbutton, &QPushButton::clicked, []() {
-        std::cout<<"он нажал кнопку"<<std::endl;  
-         
+    QObject::connect(Exitbutton, &QPushButton::clicked, []() {
+        QCoreApplication::quit();
     });
-
 
 
     window.setCentralWidget(centralWidget);  
