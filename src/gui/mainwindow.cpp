@@ -3,7 +3,7 @@
 #include <QLabel>
 #include <QPushButton>
 
-#include <QCoreApplication>  
+#include <QCoreApplication>     
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
