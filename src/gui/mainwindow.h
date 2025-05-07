@@ -12,6 +12,7 @@ public:
 
 private slots:
     void onExitClicked();
+    void LogWriteClicked();
 
 private:
     void setupUi();

@@ -1,5 +1,6 @@
 #include "netinfo.h"
 
+
 NetworkInfo::NetworkInfo(QObject *parent) : QObject(parent)
 {
     for (const QNetworkInterface &interface : QNetworkInterface::allInterfaces()) {
@@ -13,6 +14,17 @@ NetworkInfo::NetworkInfo(QObject *parent) : QObject(parent)
             }
         }
     }
+}
+QJsonArray NetworkInfo::toJsonArray() const {
+    QJsonArray result;
+    for (const auto& info : interfaces) {
+        QJsonObject obj;
+        obj["ip"] = info.ip;
+        obj["netmask"] = info.netmask;
+        obj["interface"] = info.interfaceName;
+        result.append(obj);
+    }
+    return result;
 }
 
 QList<NetworkInfo::InterfaceInfo> NetworkInfo::getNetworkInterfaces() const

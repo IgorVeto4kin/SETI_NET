@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "../core/netinfo.h"
+#include "../logs/logwriter.h"
 #include <QLabel>
 #include <QPushButton>
 
@@ -26,9 +27,14 @@ void MainWindow::setupUi()
     QPushButton *exitButton = new QPushButton("exit", centralWidget);
     exitButton->setFixedSize(150, 30);
     connect(exitButton, &QPushButton::clicked, this, &MainWindow::onExitClicked);
+
+    QPushButton *LogWriteButton = new QPushButton("write log", centralWidget);
+    LogWriteButton->setFixedSize(150, 30);
+    connect(LogWriteButton, &QPushButton::clicked, this, &MainWindow::LogWriteClicked);
     
     layout->addSpacing(20);
     layout->addWidget(exitButton);
+    layout->addWidget(LogWriteButton);
     layout->addStretch();
     
     setCentralWidget(centralWidget);
@@ -49,9 +55,19 @@ void MainWindow::displayNetworkInfo()
         
         layout->insertWidget(0, new QLabel(text, centralWidget()));
     }
+    LogWriter logger;
+    logger.writeInterfacesLog(networkInfo.toJsonArray());
 }
 
 void MainWindow::onExitClicked()
 {
     QCoreApplication::quit();
 }
+
+void MainWindow::LogWriteClicked()
+{
+    NetworkInfo networkInfo;
+    auto interfaces = networkInfo.getNetworkInterfaces();
+    LogWriter::writeInterfacesLog(interfaces);
+}
+

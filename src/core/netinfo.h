@@ -4,13 +4,15 @@
 #include <QObject>
 #include <QList>
 #include <QNetworkInterface>
+#include <QJsonArray>
+#include <QJsonObject>
 
 class NetworkInfo : public QObject
 {
     Q_OBJECT
 public:
     explicit NetworkInfo(QObject *parent = nullptr);
-    
+    QJsonArray toJsonArray() const;
     struct InterfaceInfo {
         QString ip;
         QString netmask;

@@ -19,12 +19,17 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui Network)
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/core/netinfo.cpp
+    src/core/netinfo.h
     src/gui/mainwindow.cpp
+    src/gui/mainwindow.h
+    src/logs/logwriter.cpp   
+    src/logs/logwriter.h 
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/src/core
     ${CMAKE_SOURCE_DIR}/src/gui
+    ${CMAKE_SOURCE_DIR}/src/logs
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
