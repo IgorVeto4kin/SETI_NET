@@ -24,17 +24,19 @@ void MainWindow::setupUi()
     layout->setContentsMargins(20, 20, 0, 0);
     layout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
     
-    QPushButton *exitButton = new QPushButton("exit", centralWidget);
-    exitButton->setFixedSize(150, 30);
-    connect(exitButton, &QPushButton::clicked, this, &MainWindow::onExitClicked);
-
     QPushButton *LogWriteButton = new QPushButton("write log", centralWidget);
     LogWriteButton->setFixedSize(150, 30);
     connect(LogWriteButton, &QPushButton::clicked, this, &MainWindow::LogWriteClicked);
     
+    QPushButton *exitButton = new QPushButton("exit", centralWidget);
+    exitButton->setFixedSize(150, 30);
+    connect(exitButton, &QPushButton::clicked, this, &MainWindow::onExitClicked);
+
+    
     layout->addSpacing(20);
-    layout->addWidget(exitButton);
     layout->addWidget(LogWriteButton);
+    layout->addWidget(exitButton);
+    
     layout->addStretch();
     
     setCentralWidget(centralWidget);
@@ -56,18 +58,27 @@ void MainWindow::displayNetworkInfo()
         layout->insertWidget(0, new QLabel(text, centralWidget()));
     }
     LogWriter logger;
-    logger.writeInterfacesLog(networkInfo.toJsonArray());
+    logger.writeInterfacesLog(interfaces);
 }
+
+
+
+void MainWindow::LogWriteClicked()
+{
+    NetworkInfo networkInfo;
+    auto interfaces = networkInfo.getNetworkInterfaces();
+    LogWriter logger;  
+logger.writeInterfacesLog(interfaces); 
+    
+   
+
+}
+
 
 void MainWindow::onExitClicked()
 {
     QCoreApplication::quit();
 }
 
-void MainWindow::LogWriteClicked()
-{
-    NetworkInfo networkInfo;
-    auto interfaces = networkInfo.getNetworkInterfaces();
-    LogWriter::writeInterfacesLog(interfaces);
-}
+
 
