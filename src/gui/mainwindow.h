@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QVBoxLayout>
+#include <QLabel>
 
 class MainWindow : public QMainWindow
 {
@@ -11,12 +12,17 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
 
 private slots:
-    void onExitClicked();
+    void ExitClicked();
     void LogWriteClicked();
+    void RefreshClicked();
 
 private:
+    QVBoxLayout * m_layout;  
+    QList<QLabel*> m_interfaceLabels;
     void setupUi();
     void displayNetworkInfo();
+    void clearInterfaceWidgets();
+    
 };
 
 #endif // MAINWINDOW_H

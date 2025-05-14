@@ -10,7 +10,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setupUi();
     displayNetworkInfo();
+    clearInterfaceWidgets();
 }
+
+void MainWindow::clearInterfaceWidgets() {
+    
+    for (QLabel* label : m_interfaceLabels) {
+        layout->removeWidget(label); 
+        label->deleteLater();        
+    }
+    m_interfaceLabels.clear();       
+}
+
 
 void MainWindow::setupUi()
 {
@@ -28,14 +39,20 @@ void MainWindow::setupUi()
     LogWriteButton->setFixedSize(150, 30);
     connect(LogWriteButton, &QPushButton::clicked, this, &MainWindow::LogWriteClicked);
     
-    QPushButton *exitButton = new QPushButton("exit", centralWidget);
-    exitButton->setFixedSize(150, 30);
-    connect(exitButton, &QPushButton::clicked, this, &MainWindow::onExitClicked);
+    QPushButton *ExitButton = new QPushButton("exit", centralWidget);
+    ExitButton->setFixedSize(150, 30);
+    connect(ExitButton, &QPushButton::clicked, this, &MainWindow::ExitClicked);
 
-    
+    QPushButton *RefreshButton = new QPushButton("refresh data", centralWidget);
+    ExitButton->setFixedSize(150, 30);
+    connect(ExitButton, &QPushButton::clicked, this, &MainWindow::ExitClicked);
+
+
+
     layout->addSpacing(20);
     layout->addWidget(LogWriteButton);
-    layout->addWidget(exitButton);
+    layout->addWidget(RefreshButton);
+    layout->addWidget(ExitButton);
     
     layout->addStretch();
     
@@ -44,6 +61,7 @@ void MainWindow::setupUi()
 
 void MainWindow::displayNetworkInfo()
 {
+    clearInterfaceWidgets();
     NetworkInfo networkInfo;
     auto interfaces = networkInfo.getNetworkInterfaces();
     
@@ -56,9 +74,14 @@ void MainWindow::displayNetworkInfo()
             .arg(info.interfaceName);
         
         layout->insertWidget(0, new QLabel(text, centralWidget()));
+
+        auto label = new QLabel(text, centralWidget());
+        layout->addWidget(label);
+        m_interfaceLabels.append(label); 
     }
     LogWriter logger;
     logger.writeInterfacesLog(interfaces);
+    centralWidget()->updateGeometry();
 }
 
 
@@ -68,14 +91,25 @@ void MainWindow::LogWriteClicked()
     NetworkInfo networkInfo;
     auto interfaces = networkInfo.getNetworkInterfaces();
     LogWriter logger;  
-logger.writeInterfacesLog(interfaces); 
+    logger.writeInterfacesLog(interfaces); 
     
    
 
 }
 
+void MainWindow::RefreshClicked()
+{
+    displayNetworkInfo();
+    NetworkInfo networkInfo;
+    auto interfaces = networkInfo.getNetworkInterfaces();
+    LogWriter logger;  
+    logger.writeInterfacesLog(interfaces);
+    
+   
 
-void MainWindow::onExitClicked()
+}
+
+void MainWindow::ExitClicked()
 {
     QCoreApplication::quit();
 }
