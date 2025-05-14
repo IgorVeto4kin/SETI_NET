@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 void MainWindow::clearInterfaceWidgets() {
     
     for (QLabel* label : m_interfaceLabels) {
-        layout->removeWidget(label); 
+        layout()->removeWidget(label); 
         label->deleteLater();        
     }
     m_interfaceLabels.clear();       
