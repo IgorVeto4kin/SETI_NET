@@ -1,3 +1,0 @@
-Add re-request botton
-Add multilanguages
-Add DHCP-control & versions ( whatever it means)
