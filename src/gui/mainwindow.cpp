@@ -1,9 +1,10 @@
 #include "mainwindow.h"
 #include "../core/netinfo.h"
 #include "../logs/logwriter.h"
+
+
 #include <QLabel>
 #include <QPushButton>
-
 #include <QCoreApplication>     
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
@@ -22,42 +23,69 @@ void MainWindow::clearInterfaceWidgets() {
     m_interfaceLabels.clear();       
 }
 
-
 void MainWindow::setupUi()
 {
     setWindowTitle("SETI NET");
     resize(500, 500);
     
     QWidget *centralWidget = new QWidget(this);
-    QVBoxLayout *layout = new QVBoxLayout(centralWidget);
+    QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
     
-    layout->setSpacing(10);
-    layout->setContentsMargins(20, 20, 0, 0);
-    layout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    // Устанавливаем единые отступы по всем сторонам
+    mainLayout->setContentsMargins(20, 20, 20, 20);
+    mainLayout->setSpacing(15);  // Увеличиваем расстояние между элементами
     
-    QPushButton *LogWriteButton = new QPushButton("write log", centralWidget);
-    LogWriteButton->setFixedSize(150, 30);
-    connect(LogWriteButton, &QPushButton::clicked, this, &MainWindow::LogWriteClicked);
+    // Создаем контейнер для кнопок с выравниванием по центру
+    QHBoxLayout *buttonLayout = new QHBoxLayout();
+    buttonLayout->setAlignment(Qt::AlignLeft);
     
-    QPushButton *ExitButton = new QPushButton("exit", centralWidget);
-    ExitButton->setFixedSize(150, 30);
-    connect(ExitButton, &QPushButton::clicked, this, &MainWindow::ExitClicked);
-
-    QPushButton *RefreshButton = new QPushButton("refresh data", centralWidget);
-    ExitButton->setFixedSize(150, 30);
-    connect(ExitButton, &QPushButton::clicked, this, &MainWindow::ExitClicked);
-
-
-
-    layout->addSpacing(20);
-    layout->addWidget(LogWriteButton);
-    layout->addWidget(RefreshButton);
-    layout->addWidget(ExitButton);
+    // Создаем кнопки с единым стилем
+    QPushButton *refreshButton = new QPushButton("Refresh Data");
+    QPushButton *logButton = new QPushButton("Write Log");
+    QPushButton *exitButton = new QPushButton("Exit");
     
-    layout->addStretch();
+    // Устанавливаем ОДИНАКОВЫЙ размер для всех кнопок
+    const QSize buttonSize(160, 35);
+    refreshButton->setFixedSize(buttonSize);
+    logButton->setFixedSize(buttonSize);
+    exitButton->setFixedSize(buttonSize);
+    
+    // Настраиваем стиль для профессионального вида
+    QString buttonStyle = "QPushButton {"
+                         "  background-color: #f0f0f0;"
+                         "  border: 1px solid #d0d0d0;"
+                         "  border-radius: 4px;"
+                         "  padding: 5px;"
+                         "}"
+                         "QPushButton:hover {"
+                         "  background-color: #e0e0e0;"
+                         "}";
+    
+    refreshButton->setStyleSheet(buttonStyle);
+    logButton->setStyleSheet(buttonStyle);
+    exitButton->setStyleSheet(buttonStyle);
+    
+    // Правильное подключение сигналов
+    connect(refreshButton, &QPushButton::clicked, this, &MainWindow::RefreshClicked);
+    connect(logButton, &QPushButton::clicked, this, &MainWindow::LogWriteClicked);
+    connect(exitButton, &QPushButton::clicked, this, &MainWindow::ExitClicked);
+    
+    // Добавляем кнопки в горизонтальный layout
+    buttonLayout->addWidget(refreshButton);
+    buttonLayout->addWidget(logButton);
+    buttonLayout->addWidget(exitButton);
+    
+    // Добавляем кнопочный layout в основной
+    mainLayout->addLayout(buttonLayout);
+    
+    // Добавляем растягивающийся разделитель
+    mainLayout->addStretch();
     
     setCentralWidget(centralWidget);
 }
+
+
+
 
 void MainWindow::displayNetworkInfo()
 {
@@ -83,6 +111,13 @@ void MainWindow::displayNetworkInfo()
     logger.writeInterfacesLog(interfaces);
     centralWidget()->updateGeometry();
 }
+
+
+
+
+
+
+
 
 
 

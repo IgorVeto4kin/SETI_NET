@@ -21,8 +21,12 @@ public:
     
     QList<InterfaceInfo> getNetworkInterfaces() const;
 
-private:
+
+
+    private:
     QList<InterfaceInfo> interfaces;
 };
+
+
 
 #endif // NETWORKINFO_H
