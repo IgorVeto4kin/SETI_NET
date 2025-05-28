@@ -3,6 +3,7 @@
 
 int main(int argc, char *argv[])
 {
+    //call mainwindow
     QApplication app(argc, argv);
     MainWindow window;
     window.show();
