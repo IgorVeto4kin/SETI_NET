@@ -4,12 +4,15 @@
 #include <QMainWindow>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QGroupBox>
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+private:
+    QList<QGroupBox*> m_interfaceGroups;  // Вместо QList<QLabel*>
 
 private slots:
     void ExitClicked();
@@ -18,7 +21,7 @@ private slots:
 
 private:
     QVBoxLayout * m_layout;  
-    QList<QLabel*> m_interfaceLabels;
+
     void setupUi();
     void displayNetworkInfo();
     void clearInterfaceWidgets();

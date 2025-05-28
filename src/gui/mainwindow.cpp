@@ -14,14 +14,30 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     clearInterfaceWidgets();
 }
 
-void MainWindow::clearInterfaceWidgets() {
-    
-    for (QLabel* label : m_interfaceLabels) {
-        layout()->removeWidget(label); 
-        label->deleteLater();        
+void MainWindow::clearInterfaceWidgets()
+{
+    for (auto group : m_interfaceGroups) {
+        // Удаляем все дочерние виджеты
+        QLayout* layout = group->layout();
+        if (layout) {
+            QLayoutItem* item;
+            while (item = layout->takeAt(0)) {
+                if (item->widget()) {
+                    delete item->widget();
+                }
+                delete item;
+            }
+        }
+        
+        // Удаляем саму группу
+        centralWidget()->layout()->removeWidget(group);
+        delete group;
     }
-    m_interfaceLabels.clear();       
+    m_interfaceGroups.clear();
 }
+
+
+
 
 void MainWindow::setupUi()
 {
@@ -93,23 +109,63 @@ void MainWindow::displayNetworkInfo()
     NetworkInfo networkInfo;
     auto interfaces = networkInfo.getNetworkInterfaces();
     
-    QVBoxLayout *layout = qobject_cast<QVBoxLayout*>(centralWidget()->layout());
+    QVBoxLayout* mainLayout = qobject_cast<QVBoxLayout*>(centralWidget()->layout());
+    
+    // Стили для текста
+    const QString headerStyle = "QLabel { color: #606060; font-size: 9pt; }";
+    const QString valueStyle = "QLabel { color: #000000; font-size: 10pt; font-weight: 500; }";
     
     for (const auto &info : interfaces) {
-        QString text = QString("IP-address: %1 \nSubnet mask: %2 \nInterface: %3 \n")
-            .arg(info.ip)
-            .arg(info.netmask)
-            .arg(info.interfaceName);
+        // Создаем группу для каждого интерфейса
+        QGroupBox* interfaceGroup = new QGroupBox(info.interfaceName, centralWidget());
+        QGridLayout* gridLayout = new QGridLayout(interfaceGroup);
+        gridLayout->setSpacing(5);  // Расстояние между строками
+        gridLayout->setColumnMinimumWidth(0, 120);  // Фиксированная ширина для заголовков
         
-        layout->insertWidget(0, new QLabel(text, centralWidget()));
-
-        auto label = new QLabel(text, centralWidget());
-        layout->addWidget(label);
-        m_interfaceLabels.append(label); 
+        int row = 0;
+        
+        // Добавляем свойства в сетку
+        addPropertyRow(gridLayout, row++, "Link speed:", info.speed, headerStyle, valueStyle);
+        addPropertyRow(gridLayout, row++, "IPv4 Address:", info.ip, headerStyle, valueStyle);
+        
+        if (!info.ipv6.isEmpty()) {
+            addPropertyRow(gridLayout, row++, "IPv6 Address:", info.ipv6, headerStyle, valueStyle);
+        }
+        
+        addPropertyRow(gridLayout, row++, "Hardware Address:", info.macAddress, headerStyle, valueStyle);
+        addPropertyRow(gridLayout, row++, "Default Route:", info.gateway, headerStyle, valueStyle);
+        
+        if (!info.dnsServers.isEmpty()) {
+            addPropertyRow(gridLayout, row++, "DNS:", info.dnsServers.join("\n"), headerStyle, valueStyle);
+        }
+        
+        // Добавляем группу в основной layout
+        mainLayout->insertWidget(mainLayout->count() - 1, interfaceGroup);
+        m_interfaceGroups.append(interfaceGroup);  // Сохраняем указатель
     }
+    
     LogWriter logger;
     logger.writeInterfacesLog(interfaces);
     centralWidget()->updateGeometry();
+}
+
+// Вспомогательная функция для добавления строк свойств
+void MainWindow::addPropertyRow(QGridLayout* layout, int row, 
+                                const QString& header, const QString& value,
+                                const QString& headerStyle, const QString& valueStyle)
+{
+    QLabel* headerLabel = new QLabel(header);
+    headerLabel->setStyleSheet(headerStyle);
+    headerLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    
+    QLabel* valueLabel = new QLabel(value);
+    valueLabel->setStyleSheet(valueStyle);
+    valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);  // Разрешаем копирование
+    valueLabel->setCursor(Qt::IBeamCursor);  // Курсор в виде I-образной палочки
+    valueLabel->setWordWrap(true);  // Разрешаем перенос слов
+    
+    layout->addWidget(headerLabel, row, 0);
+    layout->addWidget(valueLabel, row, 1);
 }
 
 
