@@ -14,9 +14,11 @@ public:
     explicit NetworkInfo(QObject *parent = nullptr);
     QJsonArray toJsonArray() const;
     struct InterfaceInfo {
-        QString ip;
+        QString ipv4;
         QString netmask;
         QString interfaceName;
+        QString mac;
+        QString ipv6;
     };
     
     QList<InterfaceInfo> getNetworkInterfaces() const;

@@ -22,9 +22,15 @@ private slots:
 private:
     QVBoxLayout * m_layout;  
 
+    void addPropertyRow(QGridLayout* layout, int row, 
+        const QString& header, const QString& value,
+        const QString& headerStyle, const QString& valueStyle);
+
     void setupUi();
     void displayNetworkInfo();
     void clearInterfaceWidgets();
+    
+    
     
 };
 

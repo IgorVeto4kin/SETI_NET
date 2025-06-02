@@ -45,7 +45,7 @@ QJsonArray LogWriter::interfacesToJson(const QList<NetworkInfo::InterfaceInfo>& 
     QJsonArray jsonArray;
     for (const auto& info : interfaces) {
         QJsonObject obj;
-        obj["ip"] = info.ip;
+        obj["ip"] = info.ipv4;
         obj["netmask"] = info.netmask;
         obj["interface"] = info.interfaceName;
         jsonArray.append(obj);

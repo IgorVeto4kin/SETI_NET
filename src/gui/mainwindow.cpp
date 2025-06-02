@@ -101,6 +101,28 @@ void MainWindow::setupUi()
 }
 
 
+// Вспомогательная функция для добавления строк свойств
+void MainWindow::addPropertyRow(QGridLayout* layout, int row, 
+    const QString& header, const QString& value,
+    const QString& headerStyle, const QString& valueStyle)
+{
+QLabel* headerLabel = new QLabel(header);
+headerLabel->setStyleSheet(headerStyle);
+headerLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+
+QLabel* valueLabel = new QLabel(value);
+valueLabel->setStyleSheet(valueStyle);
+valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);  // Разрешаем копирование
+valueLabel->setCursor(Qt::IBeamCursor);  // Курсор в виде I-образной палочки
+valueLabel->setWordWrap(true);  // Разрешаем перенос слов
+
+layout->addWidget(headerLabel, row, 0);
+layout->addWidget(valueLabel, row, 1);
+}
+
+
+
+
 
 
 void MainWindow::displayNetworkInfo()
@@ -125,20 +147,21 @@ void MainWindow::displayNetworkInfo()
         int row = 0;
         
         // Добавляем свойства в сетку
-        addPropertyRow(gridLayout, row++, "Link speed:", info.speed, headerStyle, valueStyle);
-        addPropertyRow(gridLayout, row++, "IPv4 Address:", info.ip, headerStyle, valueStyle);
-        
+        //addPropertyRow(gridLayout, row++, "Link speed:", info.speed, headerStyle, valueStyle);
+        addPropertyRow(gridLayout, row++, "IPv4 Address:", info.ipv4, headerStyle, valueStyle);
+        /*
         if (!info.ipv6.isEmpty()) {
             addPropertyRow(gridLayout, row++, "IPv6 Address:", info.ipv6, headerStyle, valueStyle);
         }
-        
-        addPropertyRow(gridLayout, row++, "Hardware Address:", info.macAddress, headerStyle, valueStyle);
-        addPropertyRow(gridLayout, row++, "Default Route:", info.gateway, headerStyle, valueStyle);
-        
+        */
+        addPropertyRow(gridLayout, row++, "Subnet Mask:", info.netmask, headerStyle, valueStyle);
+        addPropertyRow(gridLayout, row++, "MAC-Address:", info.mac, headerStyle, valueStyle);
+        //addPropertyRow(gridLayout, row++, "Default Route:", info.gateway, headerStyle, valueStyle);
+        /*
         if (!info.dnsServers.isEmpty()) {
             addPropertyRow(gridLayout, row++, "DNS:", info.dnsServers.join("\n"), headerStyle, valueStyle);
         }
-        
+        */
         // Добавляем группу в основной layout
         mainLayout->insertWidget(mainLayout->count() - 1, interfaceGroup);
         m_interfaceGroups.append(interfaceGroup);  // Сохраняем указатель
@@ -148,28 +171,6 @@ void MainWindow::displayNetworkInfo()
     logger.writeInterfacesLog(interfaces);
     centralWidget()->updateGeometry();
 }
-
-// Вспомогательная функция для добавления строк свойств
-void MainWindow::addPropertyRow(QGridLayout* layout, int row, 
-                                const QString& header, const QString& value,
-                                const QString& headerStyle, const QString& valueStyle)
-{
-    QLabel* headerLabel = new QLabel(header);
-    headerLabel->setStyleSheet(headerStyle);
-    headerLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-    
-    QLabel* valueLabel = new QLabel(value);
-    valueLabel->setStyleSheet(valueStyle);
-    valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);  // Разрешаем копирование
-    valueLabel->setCursor(Qt::IBeamCursor);  // Курсор в виде I-образной палочки
-    valueLabel->setWordWrap(true);  // Разрешаем перенос слов
-    
-    layout->addWidget(headerLabel, row, 0);
-    layout->addWidget(valueLabel, row, 1);
-}
-
-
-
 
 
 
