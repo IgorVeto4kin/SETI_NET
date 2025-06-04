@@ -12,7 +12,7 @@ class NetworkInfo : public QObject
     Q_OBJECT
 public:
     explicit NetworkInfo(QObject *parent = nullptr);
-    QJsonArray toJsonArray() const;
+   
     struct InterfaceInfo {
         QString ipv4;
         QString netmask;

@@ -7,6 +7,18 @@
 #include <QCoreApplication>   
 LogWriter::LogWriter() {}
 
+QJsonArray LogWriter::toJsonArray(const QList<NetworkInfo::InterfaceInfo>& interfaces) const {
+    QJsonArray result;
+    for (const auto& info : interfaces) {
+        QJsonObject obj;
+        obj["ip"] = info.ipv4;
+        obj["netmask"] = info.netmask;
+        obj["interface"] = info.interfaceName;
+        result.append(obj);
+    }
+    return result;
+}
+
 void LogWriter::writeInterfacesLog(const QList<NetworkInfo::InterfaceInfo>& interfaces) {
     
     const QString configDir = QCoreApplication::applicationDirPath() + "/../../config";
