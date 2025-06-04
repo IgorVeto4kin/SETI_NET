@@ -21,42 +21,6 @@ NetworkInfo::NetworkInfo(QObject *parent) : QObject(parent)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 QJsonArray NetworkInfo::toJsonArray() const {
     QJsonArray result;
     for (const auto& info : interfaces) {

@@ -68,13 +68,13 @@ void MainWindow::setupUi()
     
     // Настраиваем стиль для профессионального вида
     QString buttonStyle = "QPushButton {"
-                         "  background-color: #f0f0f0;"
+                         "  background-color:rgb(2, 132, 255);"
                          "  border: 1px solid #d0d0d0;"
                          "  border-radius: 4px;"
                          "  padding: 5px;"
                          "}"
                          "QPushButton:hover {"
-                         "  background-color: #e0e0e0;"
+                         "  background-color:rgb(12, 93, 214);"
                          "}";
     
     refreshButton->setStyleSheet(buttonStyle);
@@ -156,6 +156,7 @@ void MainWindow::displayNetworkInfo()
         */
         addPropertyRow(gridLayout, row++, "Subnet Mask:", info.netmask, headerStyle, valueStyle);
         addPropertyRow(gridLayout, row++, "MAC-Address:", info.mac, headerStyle, valueStyle);
+        addPropertyRow(gridLayout, row++, "Interface name:", info.interfaceName, headerStyle, valueStyle);
         //addPropertyRow(gridLayout, row++, "Default Route:", info.gateway, headerStyle, valueStyle);
         /*
         if (!info.dnsServers.isEmpty()) {
@@ -166,10 +167,11 @@ void MainWindow::displayNetworkInfo()
         mainLayout->insertWidget(mainLayout->count() - 1, interfaceGroup);
         m_interfaceGroups.append(interfaceGroup);  // Сохраняем указатель
     }
-    
+    /*
     LogWriter logger;
     logger.writeInterfacesLog(interfaces);
     centralWidget()->updateGeometry();
+    */
 }
 
 

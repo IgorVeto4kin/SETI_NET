@@ -13,20 +13,11 @@ void LogWriter::writeInterfacesLog(const QList<NetworkInfo::InterfaceInfo>& inte
     const QString logPath = configDir + "/network_interfaces.json";
     
     QDir dir(configDir);
-    if (!dir.exists()) {
-        if (!dir.mkpath(".")) {
-            qWarning() << "[LogWriter] Failed to create config directory:" << configDir;
-            return;
-        }
-    }
+    
 
   
     QFile logFile(logPath);
-    if (!logFile.open(QIODevice::WriteOnly)) {
-        qWarning() << "[LogWriter] Could not open log file:" << logPath 
-                 << "Error:" << logFile.errorString();
-        return;
-    }
+    
 
 
     QJsonObject root;
