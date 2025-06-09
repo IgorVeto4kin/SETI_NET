@@ -12,25 +12,34 @@ LogWriter::LogWriter() {}
 QString LogWriter::getConfigDirectory() const {
     // Start from binary location
     QDir dir(QCoreApplication::applicationDirPath());
-    
+    qDebug() << "Starting search from:" << dir.absolutePath();
+
     // Search upwards for marker file
     while (!dir.isRoot()) {
+        qDebug() << "Checking:" << dir.absolutePath();
+
+        // Check if marker file exists in current directory
         if (dir.exists(".project_root")) {
             QString configPath = dir.filePath("config");
-            qDebug() << "Found config directory:" << configPath;
+            qDebug() << "✅ Found .project_root! Config path:" << configPath;
             return configPath;
         }
-        if (!dir.cdUp()) break;
+
+        // Try to move up to parent directory
+        if (!dir.cdUp()) {
+            qDebug() << " Can't move up from:" << dir.absolutePath();
+            break;
+        }
     }
-    
-    // Fallback if marker not found
+
+    // Fallback if marker not found (development environment)
     QString fallbackPath = QDir::cleanPath(
         QCoreApplication::applicationDirPath() + "/../../config"
     );
-    qWarning() << "Using fallback config path:" << fallbackPath;
+    
+    qWarning() << "⚠️ Using fallback config path:" << fallbackPath;
     return fallbackPath;
 }
-
 
 
 QJsonObject LogWriter::InterfaceToJSON(const NetworkInfo::InterfaceInfo &interface)  {
@@ -54,7 +63,7 @@ void LogWriter::LogWriteAllInterfaces(const QList<NetworkInfo::InterfaceInfo>& i
         // 2. Ensure directory exists
         QDir().mkpath(configDir);
         
-        // 3. Sanitize filename
+        //Sanitize filename
         QString safeFilename = info.interfaceName;
         // Replace any non-alphanumeric characters except _- with underscores
         safeFilename.replace(QRegularExpression("[^\\w\\-]"), "_");
