@@ -13,6 +13,14 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_AUTOGEN_VERBOSE ON)
+
+configure_file(
+    "${CMAKE_SOURCE_DIR}/.project_root"
+    "${CMAKE_BINARY_DIR}/.project_root"
+    COPYONLY
+)
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core Gui Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui Network)
 

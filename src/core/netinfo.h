@@ -28,7 +28,7 @@ public:
     private:
     QList<InterfaceInfo> interfaces;
 };
-
+    
 
 
 #endif // NETWORKINFO_H

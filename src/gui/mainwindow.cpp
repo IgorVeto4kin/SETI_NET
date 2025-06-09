@@ -185,7 +185,7 @@ void MainWindow::LogWriteClicked()
     NetworkInfo networkInfo;
     auto interfaces = networkInfo.getNetworkInterfaces();
     LogWriter logger;  
-    logger.writeInterfacesLog(interfaces); 
+    logger.LogWriteAllInterfaces(interfaces); 
     
    
 
@@ -197,7 +197,7 @@ void MainWindow::RefreshClicked()
     NetworkInfo networkInfo;
     auto interfaces = networkInfo.getNetworkInterfaces();
     LogWriter logger;  
-    logger.writeInterfacesLog(interfaces);
+    logger.LogWriteAllInterfaces(interfaces);
     
    
 

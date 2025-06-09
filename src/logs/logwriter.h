@@ -8,10 +8,13 @@
 class LogWriter {
 public:
     LogWriter();
-    void writeInterfacesLog(const QList<NetworkInfo::InterfaceInfo>& interfaces);
+    void LogWriteAllInterfaces(const QList<NetworkInfo::InterfaceInfo>& interfaces);
+    //void LogWriteCertainInterface(const NetworkInfo::InterfaceInfo &interface) const;
+    QJsonObject InterfaceToJSON(const NetworkInfo::InterfaceInfo &interface) ;
+    QString getConfigDirectory() const;
     
 private:
-    QJsonArray toJsonArray(const QList<NetworkInfo::InterfaceInfo>& interfaces) const;
+    //QJsonArray toJsonArray(const QList<NetworkInfo::InterfaceInfo>& interfaces) const;
     QString m_logPath = "/configs/network_interfaces.json";
     bool ensureConfigDirExists() const;
     QJsonArray interfacesToJson(const QList<NetworkInfo::InterfaceInfo>& interfaces) const;

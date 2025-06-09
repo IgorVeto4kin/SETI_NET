@@ -4,55 +4,79 @@
 #include <QFileInfo>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QCoreApplication>   
+#include <QCoreApplication>
+#include <QDebug>
+
 LogWriter::LogWriter() {}
 
-QJsonArray LogWriter::toJsonArray(const QList<NetworkInfo::InterfaceInfo>& interfaces) const {
-    QJsonArray result;
-    for (const auto& info : interfaces) {
-        QJsonObject obj;
-        obj["ip"] = info.ipv4;
-        obj["netmask"] = info.netmask;
-        obj["interface"] = info.interfaceName;
-        result.append(obj);
+QString LogWriter::getConfigDirectory() const {
+    // Start from binary location
+    QDir dir(QCoreApplication::applicationDirPath());
+    
+    // Search upwards for marker file
+    while (!dir.isRoot()) {
+        if (dir.exists(".project_root")) {
+            QString configPath = dir.filePath("config");
+            qDebug() << "Found config directory:" << configPath;
+            return configPath;
+        }
+        if (!dir.cdUp()) break;
     }
-    return result;
+    
+    // Fallback if marker not found
+    QString fallbackPath = QDir::cleanPath(
+        QCoreApplication::applicationDirPath() + "/../../config"
+    );
+    qWarning() << "Using fallback config path:" << fallbackPath;
+    return fallbackPath;
 }
 
-void LogWriter::writeInterfacesLog(const QList<NetworkInfo::InterfaceInfo>& interfaces) {
-    
-    const QString configDir = QCoreApplication::applicationDirPath() + "/../../config";
-    const QString logPath = configDir + "/network_interfaces.json";
-    
-    QDir dir(configDir);
-    
-
-  
-    QFile logFile(logPath);
-    
 
 
-    QJsonObject root;
-    root["interfaces"] = interfacesToJson(interfaces);
-    
-    
-    if(logFile.write(QJsonDocument(root).toJson())) {
-        qDebug() << "[LogWriter] Successfully wrote log to:" << logPath;
-    } else {
-        qWarning() << "[LogWriter] Write operation failed for:" << logPath;
-    }
-    logFile.close();
+QJsonObject LogWriter::InterfaceToJSON(const NetworkInfo::InterfaceInfo &interface)  {
+    QJsonObject obj;
+    obj["ipv4"] = interface.ipv4;
+    obj["netmask"] = interface.netmask;
+    obj["interfaceName"] = interface.interfaceName;
+    obj["mac"] = interface.mac;
+    obj["ipv6"] = interface.ipv6;
+    return obj;
 }
 
-QJsonArray LogWriter::interfacesToJson(const QList<NetworkInfo::InterfaceInfo>& interfaces) const {
-    QJsonArray jsonArray;
-    for (const auto& info : interfaces) {
-        QJsonObject obj;
-        obj["ip"] = info.ipv4;
-        obj["netmask"] = info.netmask;
-        obj["interface"] = info.interfaceName;
-        jsonArray.append(obj);
-    }
-    return jsonArray;
-}
 
+void LogWriter::LogWriteAllInterfaces(const QList<NetworkInfo::InterfaceInfo>& interfaces) {
+    const QString configDir = getConfigDirectory();
+    for (const auto &info : interfaces){
+    
+        
+       
+        QJsonObject jsonData = InterfaceToJSON(info);
+        // 2. Ensure directory exists
+        QDir().mkpath(configDir);
+        
+        // 3. Sanitize filename
+        QString safeFilename = info.interfaceName;
+        // Replace any non-alphanumeric characters except _- with underscores
+        safeFilename.replace(QRegularExpression("[^\\w\\-]"), "_");
+        // Remove any leading/trailing underscores
+        safeFilename.replace(QRegularExpression("^_+|_+$"), "");
+        
+        // 4. Create full file path
+        QString filePath = configDir + "/" + safeFilename + ".json";
+        
+        // 5. Write JSON to file
+        QFile file(filePath);
+        if (!file.open(QIODevice::WriteOnly)) {
+            qWarning() << "Failed to open" << filePath << "for writing:" << file.errorString();
+            
+        }
+        
+        file.write(QJsonDocument(jsonData).toJson());
+        file.close();
+        
+        qInfo() << "Saved JSON to:" << filePath;
+    
+    
+
+    }
+}

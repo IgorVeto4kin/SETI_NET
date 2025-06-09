@@ -4,7 +4,6 @@
 NetworkInfo::NetworkInfo(QObject *parent) : QObject(parent)
 {
     for (const QNetworkInterface &interface : QNetworkInterface::allInterfaces()) {
-        QString mac = interface.hardwareAddress();
         for (const QNetworkAddressEntry &entry : interface.addressEntries()) {
             if (entry.ip().protocol() == QAbstractSocket::IPv4Protocol) {
                 InterfaceInfo info;
