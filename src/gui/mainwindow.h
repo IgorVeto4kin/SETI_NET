@@ -27,9 +27,10 @@ private:
         const QString& headerStyle, const QString& valueStyle);
 
     void setupUi();
-    void displayNetworkInfo();
-    void clearInterfaceWidgets();
     
+    void clearInterfaceWidgets();
+ public:   
+    void displayNetworkInfo();
     
     
 };

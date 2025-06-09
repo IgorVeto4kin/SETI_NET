@@ -21,7 +21,7 @@ QString LogWriter::getConfigDirectory() const {
         // Check if marker file exists in current directory
         if (dir.exists(".project_root")) {
             QString configPath = dir.filePath("config");
-            qDebug() << "✅ Found .project_root! Config path:" << configPath;
+            qDebug() << "Found .project_root! Config path:" << configPath;
             return configPath;
         }
 

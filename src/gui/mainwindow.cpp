@@ -192,12 +192,10 @@ void MainWindow::LogWriteClicked()
 }
 
 void MainWindow::RefreshClicked()
+
 {
+    clearInterfaceWidgets();
     displayNetworkInfo();
-    NetworkInfo networkInfo;
-    auto interfaces = networkInfo.getNetworkInterfaces();
-    LogWriter logger;  
-    logger.LogWriteAllInterfaces(interfaces);
     
    
 
