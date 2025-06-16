@@ -18,6 +18,7 @@ private slots:
     void ExitClicked();
     void LogWriteClicked();
     void RefreshClicked();
+    void ImportConfigClicked();
 
 private:
     QVBoxLayout * m_layout;  

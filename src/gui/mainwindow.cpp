@@ -57,12 +57,14 @@ void MainWindow::setupUi()
     
     // Создаем кнопки с единым стилем
     QPushButton *refreshButton = new QPushButton("Refresh Data");
+    QPushButton *importconfigButton = new QPushButton("Import Config");
     QPushButton *logButton = new QPushButton("Write Log");
     QPushButton *exitButton = new QPushButton("Exit");
     
     // Устанавливаем ОДИНАКОВЫЙ размер для всех кнопок
     const QSize buttonSize(160, 35);
     refreshButton->setFixedSize(buttonSize);
+    importconfigButton->setFixedSize(buttonSize);
     logButton->setFixedSize(buttonSize);
     exitButton->setFixedSize(buttonSize);
     
@@ -78,6 +80,7 @@ void MainWindow::setupUi()
                          "}";
     
     refreshButton->setStyleSheet(buttonStyle);
+    importconfigButton->setStyleSheet(buttonStyle);
     logButton->setStyleSheet(buttonStyle);
     exitButton->setStyleSheet(buttonStyle);
     
@@ -85,10 +88,12 @@ void MainWindow::setupUi()
     connect(refreshButton, &QPushButton::clicked, this, &MainWindow::RefreshClicked);
     connect(logButton, &QPushButton::clicked, this, &MainWindow::LogWriteClicked);
     connect(exitButton, &QPushButton::clicked, this, &MainWindow::ExitClicked);
+    connect(importconfigButton, &QPushButton::clicked, this, &MainWindow::ImportConfigClicked);
     
     // Добавляем кнопки в горизонтальный layout
     buttonLayout->addWidget(refreshButton);
     buttonLayout->addWidget(logButton);
+    buttonLayout->addWidget(importconfigButton);
     buttonLayout->addWidget(exitButton);
     
     // Добавляем кнопочный layout в основной
@@ -200,6 +205,12 @@ void MainWindow::RefreshClicked()
    
 
 }
+
+void MainWindow::ImportConfigClicked()
+{
+    QCoreApplication::quit();
+}
+
 
 void MainWindow::ExitClicked()
 {
