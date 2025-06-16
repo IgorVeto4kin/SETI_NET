@@ -17,12 +17,16 @@ set(CMAKE_AUTOGEN_VERBOSE ON)
 
 configure_file(
     "${CMAKE_SOURCE_DIR}/.project_root"
-    "${CMAKE_BINARY_DIR}/.project_root"
     COPYONLY
 )
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core Gui Network)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui Network)
+# find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core Gui Network)
+# find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui Network)
+
+find_package(Qt6 COMPONENTS Widgets Core Gui Network)
+if (NOT Qt6_FOUND)
+    find_package(Qt5 COMPONENTS Widgets Core Gui Network)
+endif()
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
@@ -41,10 +45,10 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
-    Qt${QT_VERSION_MAJOR}::Widgets
-    Qt${QT_VERSION_MAJOR}::Core
-    Qt${QT_VERSION_MAJOR}::Gui
-    Qt${QT_VERSION_MAJOR}::Network
+    Qt6::Widgets
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Network
 )
 
 
