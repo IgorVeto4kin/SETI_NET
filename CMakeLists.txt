@@ -21,7 +21,7 @@ configure_file(
 )
 
 # find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core Gui Network)
-# find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui Network)
+#find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui Network)
 
 find_package(Qt6 COMPONENTS Widgets Core Gui Network)
 if (NOT Qt6_FOUND)
