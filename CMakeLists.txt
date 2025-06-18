@@ -25,6 +25,7 @@ configure_file(
 
 find_package(Qt6 COMPONENTS Widgets Core Gui Network)
 if (NOT Qt6_FOUND)
+    message("not found")
     find_package(Qt5 COMPONENTS Widgets Core Gui Network)
 endif()
 
