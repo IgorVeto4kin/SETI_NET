@@ -1,10 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QGroupBox>
+#include <QMainWindow>
+#include <QFileDialog>
 
 class MainWindow : public QMainWindow
 {

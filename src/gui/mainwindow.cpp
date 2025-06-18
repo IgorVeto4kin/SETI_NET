@@ -5,17 +5,17 @@
 
 #include <QLabel>
 #include <QPushButton>
-#include <QCoreApplication>     
+#include <QCoreApplication>    
+#include <QMainWindow>
+#include <QFileDialog> 
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent){
     setupUi();
     displayNetworkInfo();
     clearInterfaceWidgets();
 }
 
-void MainWindow::clearInterfaceWidgets()
-{
+void MainWindow::clearInterfaceWidgets(){
     for (auto group : m_interfaceGroups) {
         // Удаляем все дочерние виджеты
         QLayout* layout = group->layout();
@@ -36,11 +36,7 @@ void MainWindow::clearInterfaceWidgets()
     m_interfaceGroups.clear();
 }
 
-
-
-
-void MainWindow::setupUi()
-{
+void MainWindow::setupUi(){
     setWindowTitle("SETI NET");
     resize(500, 500);
     
@@ -109,8 +105,7 @@ void MainWindow::setupUi()
 // Вспомогательная функция для добавления строк свойств
 void MainWindow::addPropertyRow(QGridLayout* layout, int row, 
     const QString& header, const QString& value,
-    const QString& headerStyle, const QString& valueStyle)
-{
+    const QString& headerStyle, const QString& valueStyle){
 QLabel* headerLabel = new QLabel(header);
 headerLabel->setStyleSheet(headerStyle);
 headerLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
@@ -125,13 +120,7 @@ layout->addWidget(headerLabel, row, 0);
 layout->addWidget(valueLabel, row, 1);
 }
 
-
-
-
-
-
-void MainWindow::displayNetworkInfo()
-{
+void MainWindow::displayNetworkInfo(){
     clearInterfaceWidgets();
     NetworkInfo networkInfo;
     auto interfaces = networkInfo.getNetworkInterfaces();
@@ -180,25 +169,14 @@ void MainWindow::displayNetworkInfo()
 }
 
 
-
-
-
-
-
-void MainWindow::LogWriteClicked()
-{
+void MainWindow::LogWriteClicked(){
     NetworkInfo networkInfo;
     auto interfaces = networkInfo.getNetworkInterfaces();
     LogWriter logger;  
     logger.LogWriteAllInterfaces(interfaces); 
-    
-   
-
 }
 
-void MainWindow::RefreshClicked()
-
-{
+void MainWindow::RefreshClicked(){
     clearInterfaceWidgets();
     displayNetworkInfo();
     
@@ -206,14 +184,24 @@ void MainWindow::RefreshClicked()
 
 }
 
-void MainWindow::ImportConfigClicked()
-{
-    QCoreApplication::quit();
+void MainWindow::ImportConfigClicked(){
+    QString filePath = QFileDialog::getOpenFileName(
+        this,                            // Родительское окно
+        tr("Choose JSON-file"),        // Заголовок окна
+        QDir::homePath(),                // Стартовая директория
+        tr("JSON файлы (*.json);;Все файлы (*)") // Фильтры
+    );
+
+    if(filePath.isEmpty()) {
+        qDebug() << "Canceled";
+        return;
+    }
+
+    qDebug() << "Choosen file:" << filePath;
 }
 
 
-void MainWindow::ExitClicked()
-{
+void MainWindow::ExitClicked(){
     QCoreApplication::quit();
 }
 
