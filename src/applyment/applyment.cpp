@@ -1,4 +1,4 @@
-#include "networkconfigmanager.h"
+#include "applyment.h"
 
 NetworkConfigManager::NetworkConfigManager(QObject *parent) : QObject(parent) {}
 

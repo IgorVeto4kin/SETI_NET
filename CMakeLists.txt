@@ -36,13 +36,19 @@ add_executable(${PROJECT_NAME}
     src/gui/mainwindow.cpp
     src/gui/mainwindow.h
     src/logs/logwriter.cpp   
-    src/logs/logwriter.h 
+    src/logs/logwriter.h
+    src/applyment/applyment.h
+    src/applyment/applyment.cpp
+
+
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/src/core
     ${CMAKE_SOURCE_DIR}/src/gui
     ${CMAKE_SOURCE_DIR}/src/logs
+    ${CMAKE_SOURCE_DIR}/src/applyment
+
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
