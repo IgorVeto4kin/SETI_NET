@@ -1,94 +1,145 @@
 #include "applyment.h"
+#include <cmath>     // Для ffs()
+#include <QRegularExpression>
 
-NetworkConfigManager::NetworkConfigManager(QObject *parent) : QObject(parent) {}
+NetworkConfigManager::NetworkConfigManager(QObject *parent) 
+    : QObject(parent) {}
 
-// Парсинг JSON-файла
-InterfaceInfo NetworkConfigManager::parseJsonConfig(const QString &filePath) {
-    InterfaceInfo info;
-    QFile file(filePath);
-    if (!file.open(QIODevice::ReadOnly)) {
-        qWarning() << "Cannot open JSON file";
-        return info;
-    }
-
-    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-    QJsonObject obj = doc.object();
-    info.interfaceName = obj["interfaceName"].toString();
-    info.ipv4 = obj["ipv4"].toString();
-    info.netmask = obj["netmask"].toString();
-    info.mac = obj["mac"].toString();
-    info.ipv6 = obj["ipv6"].toString();
-
-    return info;
-}
-
-// Проверка существования интерфейса
-bool NetworkConfigManager::validateInterface(const QString &interfaceName) {
-    foreach (QNetworkInterface interface, QNetworkInterface::allInterfaces()) {
-        if (interface.name() == interfaceName) return true;
-    }
-    qWarning() << "Interface" << interfaceName << "not found";
-    return false;
-}
-
-// Конвертация маски в префикс (CIDR)
-int NetworkConfigManager::netmaskToPrefix(const QString &netmask) {
-    quint32 mask = QHostAddress(netmask).toIPv4Address();
-    if (mask == 0) return -1;
-    return 32 - ffs(~mask);
-}
-
-// Выполнение системной команды
-bool NetworkConfigManager::runCommand(const QString &command) {
-    QProcess process;
-    process.start("sh", QStringList() << "-c" << command);
-    if (!process.waitForFinished(5000)) {
-        qWarning() << "Command timeout:" << command;
+bool NetworkConfigManager::applySettingsFromJson(const QString &filePath){
+    // Шаг 1: Загрузка и парсинг JSON-файла
+    QFile configFile(filePath);
+    if (!configFile.open(QIODevice::ReadOnly)) {
+        qCritical() << "Ошибка открытия файла:" << configFile.errorString();
         return false;
     }
-    if (process.exitCode() != 0) {
-        qWarning() << "Command error:" << process.readAllStandardError();
+    
+    QJsonParseError parseError;
+    QJsonDocument configDoc = QJsonDocument::fromJson(configFile.readAll(), &parseError);
+    if (parseError.error != QJsonParseError::NoError) {
+        qCritical() << "Ошибка парсинга JSON:" << parseError.errorString();
         return false;
     }
-    return true;
-}
-
-// Основная функция применения настроек
-bool NetworkConfigManager::applyNetworkSettings(const InterfaceInfo &info) {
-    if (!validateInterface(info.interfaceName)) return false;
-
-    int prefix = netmaskToPrefix(info.netmask);
+    
+    QJsonObject config = configDoc.object();
+    
+    // Извлечение параметров из JSON
+    QString interfaceName = config["interfaceName"].toString();
+    QString ipv4 = config["ipv4"].toString();
+    QString netmask = config["netmask"].toString();
+    QString mac = config["mac"].toString();
+    QString ipv6 = config["ipv6"].toString();
+    
+    // Шаг 2: Проверка обязательных полей
+    if (interfaceName.isEmpty() || ipv4.isEmpty() || netmask.isEmpty()) {
+        qCritical() << "Неполные настройки (отсутствует interfaceName, ipv4 или netmask)";
+        return false;
+    }
+    
+    // Шаг 3: Проверка MAC-адреса (важное новое требование)
+    if (!verifyMacAddress(interfaceName, mac)) {
+        qCritical() << "MAC-адрес не совпадает! Ожидаемый:" << mac 
+                   << "Фактический:" << QNetworkInterface::interfaceFromName(interfaceName).hardwareAddress();
+        return false;
+    }
+    
+    // Шаг 4: Обработка IPv6 (заглушка с предупреждением)
+    if (!ipv6.isEmpty()) {
+        qWarning() << "Обнаружена IPv6-конфигурация. В текущей версии IPv6 не поддерживается. Значение:"
+                  << ipv6 << "будет проигнорировано";
+        // Здесь можно добавить return false; если IPv6 должен быть ошибкой
+    }
+    
+    // Шаг 5: Преобразование маски в префикс
+    int prefix = netmaskToPrefix(netmask);
     if (prefix < 0) {
-        qWarning() << "Invalid netmask format";
+        qCritical() << "Некорректная сетевая маска:" << netmask;
         return false;
     }
-
-    QString ipWithPrefix = info.ipv4 + "/" + QString::number(prefix);
+    
+    // Шаг 6: Формирование команд для применения настроек
     QStringList commands;
-
+    
     // Выключение интерфейса
-    commands << "ip link set dev " + info.interfaceName + " down";
-
-    // Смена MAC-адреса (если указан)
-    if (!info.mac.isEmpty() && QNetworkInterface::interfaceFromName(info.interfaceName).hardwareAddress() != info.mac) {
-        commands << "ip link set dev " + info.interfaceName + " address " + info.mac;
-    }
-
-    // Очистка IPv4-адресов и добавление нового
-    commands << "ip -4 addr flush dev " + info.interfaceName;
-    commands << "ip addr add " + ipWithPrefix + " dev " + info.interfaceName;
-
+    commands << QString("ip link set dev %1 down").arg(interfaceName);
+    
+    // Очистка текущих IPv4-адресов
+    commands << QString("ip -4 addr flush dev %1").arg(interfaceName);
+    
+    // Добавление нового IPv4-адреса с маской
+    commands << QString("ip addr add %1/%2 dev %3").arg(ipv4).arg(prefix).arg(interfaceName);
+    
     // Включение интерфейса
-    commands << "ip link set dev " + info.interfaceName + " up";
-
-    // Выполнение команд
-    foreach (const QString &command, commands) {
-        if (!runCommand(command)) {
-            qCritical() << "Failed on command:" << command;
+    commands << QString("ip link set dev %1 up").arg(interfaceName);
+    
+    // Шаг 7: Выполнение команд
+    for (const QString &cmd : commands) {
+        if (!runCommand(cmd)) {
+            qCritical() << "Ошибка выполнения команды:" << cmd;
             return false;
         }
     }
-
-    qDebug() << "Network settings applied successfully";
+    
+    qInfo() << "Сетевые настройки успешно применены для интерфейса" << interfaceName;
     return true;
+}
+
+int NetworkConfigManager::netmaskToPrefix(const QString &netmask){// Проверка валидности маски
+    QHostAddress netmaskAddr(netmask);
+    if (netmaskAddr.isNull() || netmaskAddr.protocol() != QAbstractSocket::IPv4Protocol) {
+        return -1;
+    }
+    
+    quint32 bits = netmaskAddr.toIPv4Address();
+    int prefix = 0;
+    for (int i = 0; i < 32; i++) {
+        if (bits & (1 << (31 - i))) {
+            prefix++;
+        } else {
+            break;
+        }
+    }
+    
+    quint32 fullMask = (0xFFFFFFFF << (32 - prefix)) & 0xFFFFFFFF;
+    return (fullMask == bits) ? prefix : -1;
+}
+
+bool NetworkConfigManager::runCommand(const QString &command){
+    QProcess process;
+    process.setProcessChannelMode(QProcess::MergedChannels);
+    
+    // Запуск команды через оболочку (для поддержки пайпов и спец. символов)
+    process.start("sh", QStringList() << "-c" << command);
+    
+    // Ожидание завершения с таймаутом 5 секунд
+    if (!process.waitForFinished(5000)) {
+        qWarning() << "Таймаут выполнения команды:" << command;
+        return false;
+    }
+    
+    // Проверка кода возврата
+    if (process.exitCode() != 0) {
+        qWarning() << "Команда завершилась с ошибкой:" << command
+                  << "\nКод ошибки:" << process.exitCode()
+                  << "\nВывод:" << process.readAllStandardOutput();
+        return false;
+    }
+    
+    return true;
+}
+
+bool NetworkConfigManager::verifyMacAddress(const QString &interfaceName, const QString &expectedMac){
+    // Нормализация MAC-адресов (приведение к верхнему регистру без разделителей)
+    QString cleanExpected = expectedMac.toUpper().remove(QRegularExpression("[:\\s-]"));
+    
+    // Получение фактического MAC-адреса
+    QNetworkInterface iface = QNetworkInterface::interfaceFromName(interfaceName);
+    if (!iface.isValid()) {
+        qWarning() << "Интерфейс не найден:" << interfaceName;
+        return false;
+    }
+    
+    QString cleanActual = iface.hardwareAddress().toUpper().remove(QRegularExpression("[:\\s-]"));
+    
+    // Сравнение нормализованных MAC-адресов
+    return (cleanExpected == cleanActual);
 }

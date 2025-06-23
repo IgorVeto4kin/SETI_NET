@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "../core/netinfo.h"
 #include "../logs/logwriter.h"
+#include "../applyment/applyment.h"
 
 
 #include <QLabel>
@@ -198,6 +199,8 @@ void MainWindow::ImportConfigClicked(){
     }
 
     qDebug() << "Choosen file:" << filePath;
+    NetworkConfigManager manager;
+    manager.applySettingsFromJson(filePath);
 }
 
 

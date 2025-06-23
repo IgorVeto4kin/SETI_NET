@@ -9,27 +9,22 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QFile>
-
-struct InterfaceInfo {
-    QString interfaceName;
-    QString ipv4;
-    QString netmask;
-    QString mac;
-    QString ipv6;
-};
+#include <QHostAddress>
 
 class NetworkConfigManager : public QObject
 {
     Q_OBJECT
 public:
     explicit NetworkConfigManager(QObject *parent = nullptr);
-    bool applyNetworkSettings(const InterfaceInfo &info);
-    InterfaceInfo parseJsonConfig(const QString &filePath);
+    
+    
+    bool applySettingsFromJson(const QString &filePath);
 
 private:
-    bool validateInterface(const QString &interfaceName);
+    
     int netmaskToPrefix(const QString &netmask);
     bool runCommand(const QString &command);
+    bool verifyMacAddress(const QString &interfaceName, const QString &expectedMac);
 };
 
 #endif // NETWORKCONFIGMANAGER_H
