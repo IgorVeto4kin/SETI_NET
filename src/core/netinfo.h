@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QList>
 #include <QNetworkInterface>
-#include <QJsonArray>
 #include <QJsonObject>
 
 class NetworkInfo : public QObject
