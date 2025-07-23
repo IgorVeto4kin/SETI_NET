@@ -11,6 +11,8 @@ NetworkInfo::NetworkInfo(QObject *parent) : QObject(parent)
                 info.ipv4 = entry.ip().toString();
                 info.netmask = entry.netmask().toString();
                 info.interfaceName = interface.name();
+                
+
                 interfaces.append(info);
             }
         }

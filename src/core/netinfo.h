@@ -18,6 +18,8 @@ public:
         QString interfaceName;
         QString mac;
         QString ipv6;
+        QString default_gateway;
+        QList <QString> dns;
     };
     
     QList<InterfaceInfo> getNetworkInterfaces() const;
