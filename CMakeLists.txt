@@ -27,33 +27,16 @@ configure_file(
 
 # Find Qt6 with required components
 find_package(Qt6 COMPONENTS Widgets Core Gui Network)
+#message(STATUS "We fucked up finding required packages. Run \n sudo ./setup.sh \n for download them")
 
 if (NOT Qt6_FOUND)
-    message(STATUS "Qt6 modules not found. Attempting to install on Ubuntu...")
+    message(STATUS "We fucked up finding required packages. Run \n sudo ../setup.sh \nfor download them")
 
-    # Install Qt6 base and required modules using apt
+    
     execute_process(
-        COMMAND sudo apt update
-        RESULT_VARIABLE UPDATE_RESULT
+        COMMAND chmod +x install_dependances.sh
+        #RESULT_VARIABLE UPDATE_RESULT
     )
-    if (NOT UPDATE_RESULT EQUAL 0)
-        message(FATAL_ERROR "Failed to run 'sudo apt update'. Please ensure you have sudo privileges and try again.")
-    endif()
-
-    # Install qt6-base-dev (includes Core, Gui) and additional modules
-    execute_process(
-        COMMAND sudo apt install -y qt6-base-dev qt6-network-dev
-        RESULT_VARIABLE INSTALL_RESULT
-    )
-    if (NOT INSTALL_RESULT EQUAL 0)
-        message(FATAL_ERROR "Failed to install Qt6 modules. Please install 'qt6-base-dev' and 'qt6-network-dev' manually using 'sudo apt install qt6-base-dev qt6-network-dev'.")
-    endif()
-
-    # Re-run find_package after installation attempt
-    find_package(Qt6 COMPONENTS Widgets Core Gui Network REQUIRED)
-    if (NOT Qt6_FOUND)
-        message(FATAL_ERROR "Qt6 modules still not found after installation attempt. Please verify Qt6 installation and set Qt6_DIR if necessary.")
-    endif()
 endif()
 
 # Add executable or library target
