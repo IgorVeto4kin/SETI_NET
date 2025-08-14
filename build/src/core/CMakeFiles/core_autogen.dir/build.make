@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/grisa/SETI_NET
+CMAKE_SOURCE_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/grisa/SETI_NET/build
+CMAKE_BINARY_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build
 
 # Utility rule file for core_autogen.
 
@@ -67,8 +67,8 @@ include src/core/CMakeFiles/core_autogen.dir/compiler_depend.make
 include src/core/CMakeFiles/core_autogen.dir/progress.make
 
 src/core/CMakeFiles/core_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target core"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/cmake -E cmake_autogen /home/grisa/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target core"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/cmake -E cmake_autogen /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir/AutogenInfo.json Debug
 
 core_autogen: src/core/CMakeFiles/core_autogen
 core_autogen: src/core/CMakeFiles/core_autogen.dir/build.make
@@ -79,10 +79,10 @@ src/core/CMakeFiles/core_autogen.dir/build: core_autogen
 .PHONY : src/core/CMakeFiles/core_autogen.dir/build
 
 src/core/CMakeFiles/core_autogen.dir/clean:
-	cd /home/grisa/SETI_NET/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/core_autogen.dir/cmake_clean.cmake
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/core_autogen.dir/cmake_clean.cmake
 .PHONY : src/core/CMakeFiles/core_autogen.dir/clean
 
 src/core/CMakeFiles/core_autogen.dir/depend:
-	cd /home/grisa/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/grisa/SETI_NET /home/grisa/SETI_NET/src/core /home/grisa/SETI_NET/build /home/grisa/SETI_NET/build/src/core /home/grisa/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/igor_veto4kin/experiments/work_OKB/SETI_NET /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/core/CMakeFiles/core_autogen.dir/depend
 

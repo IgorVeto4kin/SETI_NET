@@ -1,5 +1,5 @@
-/home/grisa/SETI_NET/build/src/core/core_autogen/TBEQCRIPHL/moc_core_apply.cpp: /home/grisa/SETI_NET/src/core/core_apply/core_apply.hpp \
-  /home/grisa/SETI_NET/build/src/core/core_autogen/moc_predefs.h \
+/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/TBEQCRIPHL/moc_core_apply.cpp: /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_apply/core_apply.hpp \
+  /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/moc_predefs.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/assert.h \

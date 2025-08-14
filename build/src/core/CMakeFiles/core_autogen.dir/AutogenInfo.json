@@ -1,12 +1,12 @@
 {
-	"BUILD_DIR" : "/home/grisa/SETI_NET/build/src/core/core_autogen",
-	"CMAKE_BINARY_DIR" : "/home/grisa/SETI_NET/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/grisa/SETI_NET/build/src/core",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/grisa/SETI_NET/src/core",
+	"BUILD_DIR" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen",
+	"CMAKE_BINARY_DIR" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/grisa/SETI_NET/src/core/CMakeLists.txt",
+		"/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/CMakeLists.txt",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake",
@@ -112,38 +112,38 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/grisa/SETI_NET",
+	"CMAKE_SOURCE_DIR" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"/home/grisa/SETI_NET/src/core/core_apply/core_apply.hpp",
+			"/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_apply/core_apply.hpp",
 			"MU",
 			"TBEQCRIPHL/moc_core_apply.cpp",
 			null
 		],
 		[
-			"/home/grisa/SETI_NET/src/core/core_logger/core_logger.hpp",
+			"/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_logger/core_logger.hpp",
 			"MU",
 			"2PGXAIA73T/moc_core_logger.cpp",
 			null
 		],
 		[
-			"/home/grisa/SETI_NET/src/core/core_network/core_network.hpp",
+			"/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_network/core_network.hpp",
 			"MU",
 			"UYWXAHSXYT/moc_core_network.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/grisa/SETI_NET/build/src/core/core_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/grisa/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"APP_NAME=\"\"",
 		"OS_TYPE=\"\"",
-		"PROJECT_ROOT_DIR=\"/home/grisa/SETI_NET\"",
+		"PROJECT_ROOT_DIR=\"/home/igor_veto4kin/experiments/work_OKB/SETI_NET\"",
 		"PROJECT_STYLE_SHEET=\"\"",
 		"QT_CORE_LIB",
 		"QT_NETWORK_LIB",
@@ -158,7 +158,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/grisa/SETI_NET/src/core",
+		"/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core",
 		"/usr/include/x86_64-linux-gnu/qt6/QtCore",
 		"/usr/include/x86_64-linux-gnu/qt6",
 		"/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++",
@@ -182,27 +182,31 @@
 		"-c",
 		"/usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/grisa/SETI_NET/build/src/core/core_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "/home/grisa/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir/ParseCache.txt",
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/libexec/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt6/libexec/uic",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 2,
-	"SETTINGS_FILE" : "/home/grisa/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/grisa/SETI_NET/src/core/core_apply/core_apply.cpp", "MU", null ],
 		[
-			"/home/grisa/SETI_NET/src/core/core_logger/core_logger.cpp",
+			"/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_apply/core_apply.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/grisa/SETI_NET/src/core/core_network/core_network.cpp",
+			"/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_logger/core_logger.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_network/core_network.cpp",
 			"MU",
 			null
 		]

@@ -1,7 +1,7 @@
 src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o: \
- /home/grisa/SETI_NET/src/core/core_network/core_network.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_network/core_network.cpp \
  /usr/include/stdc-predef.h \
- /home/grisa/SETI_NET/src/core/core_network/core_network.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_network/core_network.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \

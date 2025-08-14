@@ -1,7 +1,7 @@
 src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o: \
- /home/grisa/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/grisa/SETI_NET/build/src/core/core_autogen/TBEQCRIPHL/moc_core_apply.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/TBEQCRIPHL/moc_core_apply.cpp \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -117,7 +117,7 @@ src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/grisa/SETI_NET/build/src/core/core_autogen/TBEQCRIPHL/../../../../../src/core/core_apply/core_apply.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/TBEQCRIPHL/../../../../../src/core/core_apply/core_apply.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \
@@ -347,7 +347,7 @@ src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QHostAddress \
  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qhostaddress.h \
- /home/grisa/SETI_NET/build/src/core/core_autogen/UYWXAHSXYT/moc_core_network.cpp \
- /home/grisa/SETI_NET/build/src/core/core_autogen/UYWXAHSXYT/../../../../../src/core/core_network/core_network.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/UYWXAHSXYT/moc_core_network.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/UYWXAHSXYT/../../../../../src/core/core_network/core_network.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h

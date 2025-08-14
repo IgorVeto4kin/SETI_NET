@@ -1,7 +1,7 @@
 src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o: \
- /home/grisa/SETI_NET/src/gui/MainWindow/MainWindow.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/MainWindow.cpp \
  /usr/include/stdc-predef.h \
- /home/grisa/SETI_NET/src/gui/MainWindow/MainWindow.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/MainWindow.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -369,7 +369,7 @@ src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcalendar.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdialog.h \
- /home/grisa/SETI_NET/src/gui/MainWindow/../../core/core_apply/core_apply.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/../../core/core_apply/core_apply.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
@@ -397,11 +397,11 @@ src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QHostAddress \
  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qhostaddress.h \
- /home/grisa/SETI_NET/src/gui/MainWindow/../../core/core_logger/core_logger.hpp \
- /home/grisa/SETI_NET/src/gui/MainWindow/../../core/core_logger/../core_network/core_network.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/../../core/core_logger/core_logger.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/../../core/core_logger/../core_network/core_network.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
- /home/grisa/SETI_NET/src/gui/MainWindow/../../core/core_network/core_network.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/../../core/core_network/core_network.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
@@ -411,4 +411,12 @@ src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qeventloop.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTabWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h

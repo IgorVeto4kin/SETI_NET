@@ -214,7 +214,7 @@
 #define __STDC_IEC_60559_COMPLEX__ 201404L
 #define __cpp_aggregate_bases 201603L
 #define __FLT128_HAS_DENORM__ 1
-#define PROJECT_ROOT_DIR "/home/grisa/SETI_NET"
+#define PROJECT_ROOT_DIR "/home/igor_veto4kin/experiments/work_OKB/SETI_NET"
 #define __FLT32_DECIMAL_DIG__ 9
 #define __FLT128_DIG__ 33
 #define __INT32_C(c) c

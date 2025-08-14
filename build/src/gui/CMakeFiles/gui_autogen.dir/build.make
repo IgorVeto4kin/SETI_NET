@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/grisa/SETI_NET
+CMAKE_SOURCE_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/grisa/SETI_NET/build
+CMAKE_BINARY_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build
 
 # Utility rule file for gui_autogen.
 
@@ -67,8 +67,8 @@ include src/gui/CMakeFiles/gui_autogen.dir/compiler_depend.make
 include src/gui/CMakeFiles/gui_autogen.dir/progress.make
 
 src/gui/CMakeFiles/gui_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target gui"
-	cd /home/grisa/SETI_NET/build/src/gui && /usr/bin/cmake -E cmake_autogen /home/grisa/SETI_NET/build/src/gui/CMakeFiles/gui_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target gui"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && /usr/bin/cmake -E cmake_autogen /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/CMakeFiles/gui_autogen.dir/AutogenInfo.json Debug
 
 gui_autogen: src/gui/CMakeFiles/gui_autogen
 gui_autogen: src/gui/CMakeFiles/gui_autogen.dir/build.make
@@ -79,10 +79,10 @@ src/gui/CMakeFiles/gui_autogen.dir/build: gui_autogen
 .PHONY : src/gui/CMakeFiles/gui_autogen.dir/build
 
 src/gui/CMakeFiles/gui_autogen.dir/clean:
-	cd /home/grisa/SETI_NET/build/src/gui && $(CMAKE_COMMAND) -P CMakeFiles/gui_autogen.dir/cmake_clean.cmake
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && $(CMAKE_COMMAND) -P CMakeFiles/gui_autogen.dir/cmake_clean.cmake
 .PHONY : src/gui/CMakeFiles/gui_autogen.dir/clean
 
 src/gui/CMakeFiles/gui_autogen.dir/depend:
-	cd /home/grisa/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/grisa/SETI_NET /home/grisa/SETI_NET/src/gui /home/grisa/SETI_NET/build /home/grisa/SETI_NET/build/src/gui /home/grisa/SETI_NET/build/src/gui/CMakeFiles/gui_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/igor_veto4kin/experiments/work_OKB/SETI_NET /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/CMakeFiles/gui_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/gui/CMakeFiles/gui_autogen.dir/depend
 

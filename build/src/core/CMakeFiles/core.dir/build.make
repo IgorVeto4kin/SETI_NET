@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/grisa/SETI_NET
+CMAKE_SOURCE_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/grisa/SETI_NET/build
+CMAKE_BINARY_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build
 
 # Include any dependencies generated for this target.
 include src/core/CMakeFiles/core.dir/depend.make
@@ -72,58 +72,58 @@ include src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o: src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o: src/core/core_autogen/mocs_compilation.cpp
 src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o: src/core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o -MF CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o -c /home/grisa/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o -MF CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.o -c /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp
 
 src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.i"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/grisa/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp > CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.i
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp > CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.i
 
 src/core/CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.s"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/grisa/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp -o CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.s
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/core_autogen/mocs_compilation.cpp -o CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.s
 
 src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.o: src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.o: ../src/core/core_apply/core_apply.cpp
 src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.o: src/core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.o"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.o -MF CMakeFiles/core.dir/core_apply/core_apply.cpp.o.d -o CMakeFiles/core.dir/core_apply/core_apply.cpp.o -c /home/grisa/SETI_NET/src/core/core_apply/core_apply.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.o"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.o -MF CMakeFiles/core.dir/core_apply/core_apply.cpp.o.d -o CMakeFiles/core.dir/core_apply/core_apply.cpp.o -c /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_apply/core_apply.cpp
 
 src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/core_apply/core_apply.cpp.i"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/grisa/SETI_NET/src/core/core_apply/core_apply.cpp > CMakeFiles/core.dir/core_apply/core_apply.cpp.i
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_apply/core_apply.cpp > CMakeFiles/core.dir/core_apply/core_apply.cpp.i
 
 src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/core_apply/core_apply.cpp.s"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/grisa/SETI_NET/src/core/core_apply/core_apply.cpp -o CMakeFiles/core.dir/core_apply/core_apply.cpp.s
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_apply/core_apply.cpp -o CMakeFiles/core.dir/core_apply/core_apply.cpp.s
 
 src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o: src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o: ../src/core/core_logger/core_logger.cpp
 src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o: src/core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o -MF CMakeFiles/core.dir/core_logger/core_logger.cpp.o.d -o CMakeFiles/core.dir/core_logger/core_logger.cpp.o -c /home/grisa/SETI_NET/src/core/core_logger/core_logger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o -MF CMakeFiles/core.dir/core_logger/core_logger.cpp.o.d -o CMakeFiles/core.dir/core_logger/core_logger.cpp.o -c /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_logger/core_logger.cpp
 
 src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/core_logger/core_logger.cpp.i"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/grisa/SETI_NET/src/core/core_logger/core_logger.cpp > CMakeFiles/core.dir/core_logger/core_logger.cpp.i
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_logger/core_logger.cpp > CMakeFiles/core.dir/core_logger/core_logger.cpp.i
 
 src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/core_logger/core_logger.cpp.s"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/grisa/SETI_NET/src/core/core_logger/core_logger.cpp -o CMakeFiles/core.dir/core_logger/core_logger.cpp.s
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_logger/core_logger.cpp -o CMakeFiles/core.dir/core_logger/core_logger.cpp.s
 
 src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o: src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o: ../src/core/core_network/core_network.cpp
 src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o: src/core/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o -MF CMakeFiles/core.dir/core_network/core_network.cpp.o.d -o CMakeFiles/core.dir/core_network/core_network.cpp.o -c /home/grisa/SETI_NET/src/core/core_network/core_network.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o -MF CMakeFiles/core.dir/core_network/core_network.cpp.o.d -o CMakeFiles/core.dir/core_network/core_network.cpp.o -c /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_network/core_network.cpp
 
 src/core/CMakeFiles/core.dir/core_network/core_network.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/core_network/core_network.cpp.i"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/grisa/SETI_NET/src/core/core_network/core_network.cpp > CMakeFiles/core.dir/core_network/core_network.cpp.i
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_network/core_network.cpp > CMakeFiles/core.dir/core_network/core_network.cpp.i
 
 src/core/CMakeFiles/core.dir/core_network/core_network.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/core_network/core_network.cpp.s"
-	cd /home/grisa/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/grisa/SETI_NET/src/core/core_network/core_network.cpp -o CMakeFiles/core.dir/core_network/core_network.cpp.s
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_network/core_network.cpp -o CMakeFiles/core.dir/core_network/core_network.cpp.s
 
 # Object files for target core
 core_OBJECTS = \
@@ -141,19 +141,19 @@ src/core/libcore.a: src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/core_network/core_network.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/build.make
 src/core/libcore.a: src/core/CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libcore.a"
-	cd /home/grisa/SETI_NET/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
-	cd /home/grisa/SETI_NET/build/src/core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libcore.a"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/core/CMakeFiles/core.dir/build: src/core/libcore.a
 .PHONY : src/core/CMakeFiles/core.dir/build
 
 src/core/CMakeFiles/core.dir/clean:
-	cd /home/grisa/SETI_NET/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean.cmake
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean.cmake
 .PHONY : src/core/CMakeFiles/core.dir/clean
 
 src/core/CMakeFiles/core.dir/depend:
-	cd /home/grisa/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/grisa/SETI_NET /home/grisa/SETI_NET/src/core /home/grisa/SETI_NET/build /home/grisa/SETI_NET/build/src/core /home/grisa/SETI_NET/build/src/core/CMakeFiles/core.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/igor_veto4kin/experiments/work_OKB/SETI_NET /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/core/CMakeFiles/core.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/core/CMakeFiles/core.dir/depend
 

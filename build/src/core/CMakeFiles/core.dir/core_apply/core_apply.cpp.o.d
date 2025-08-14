@@ -1,7 +1,7 @@
 src/core/CMakeFiles/core.dir/core_apply/core_apply.cpp.o: \
- /home/grisa/SETI_NET/src/core/core_apply/core_apply.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_apply/core_apply.cpp \
  /usr/include/stdc-predef.h \
- /home/grisa/SETI_NET/src/core/core_apply/core_apply.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_apply/core_apply.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \

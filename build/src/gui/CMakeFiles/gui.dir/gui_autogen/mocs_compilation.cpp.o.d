@@ -1,7 +1,7 @@
 src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o: \
- /home/grisa/SETI_NET/build/src/gui/gui_autogen/mocs_compilation.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/gui_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/grisa/SETI_NET/build/src/gui/gui_autogen/WCPGUQ57CZ/moc_MainWindow.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/gui_autogen/WCPGUQ57CZ/moc_MainWindow.cpp \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -117,7 +117,7 @@ src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/grisa/SETI_NET/build/src/gui/gui_autogen/WCPGUQ57CZ/../../../../../src/gui/MainWindow/MainWindow.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/gui_autogen/WCPGUQ57CZ/../../../../../src/gui/MainWindow/MainWindow.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \

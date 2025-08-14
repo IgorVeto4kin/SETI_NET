@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/grisa/SETI_NET
+CMAKE_SOURCE_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/grisa/SETI_NET/build
+CMAKE_BINARY_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build
 
 # Utility rule file for seti_net_autogen.
 
@@ -67,8 +67,8 @@ include CMakeFiles/seti_net_autogen.dir/compiler_depend.make
 include CMakeFiles/seti_net_autogen.dir/progress.make
 
 CMakeFiles/seti_net_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target seti_net"
-	/usr/bin/cmake -E cmake_autogen /home/grisa/SETI_NET/build/CMakeFiles/seti_net_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target seti_net"
+	/usr/bin/cmake -E cmake_autogen /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles/seti_net_autogen.dir/AutogenInfo.json Debug
 
 seti_net_autogen: CMakeFiles/seti_net_autogen
 seti_net_autogen: CMakeFiles/seti_net_autogen.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/seti_net_autogen.dir/clean:
 .PHONY : CMakeFiles/seti_net_autogen.dir/clean
 
 CMakeFiles/seti_net_autogen.dir/depend:
-	cd /home/grisa/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/grisa/SETI_NET /home/grisa/SETI_NET /home/grisa/SETI_NET/build /home/grisa/SETI_NET/build /home/grisa/SETI_NET/build/CMakeFiles/seti_net_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/igor_veto4kin/experiments/work_OKB/SETI_NET /home/igor_veto4kin/experiments/work_OKB/SETI_NET /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles/seti_net_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/seti_net_autogen.dir/depend
 

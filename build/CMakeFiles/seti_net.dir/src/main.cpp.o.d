@@ -1,4 +1,5 @@
-CMakeFiles/seti_net.dir/src/main.cpp.o: /home/grisa/SETI_NET/src/main.cpp \
+CMakeFiles/seti_net.dir/src/main.cpp.o: \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/main.cpp \
  /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
@@ -347,7 +348,7 @@ CMakeFiles/seti_net.dir/src/main.cpp.o: /home/grisa/SETI_NET/src/main.cpp \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/codecvt \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
- /home/grisa/SETI_NET/src/gui/MainWindow/MainWindow.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/MainWindow.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayout.h \

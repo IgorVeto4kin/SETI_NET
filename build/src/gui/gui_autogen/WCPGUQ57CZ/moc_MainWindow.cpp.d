@@ -1,5 +1,5 @@
-/home/grisa/SETI_NET/build/src/gui/gui_autogen/WCPGUQ57CZ/moc_MainWindow.cpp: /home/grisa/SETI_NET/src/gui/MainWindow/MainWindow.hpp \
-  /home/grisa/SETI_NET/build/src/gui/gui_autogen/moc_predefs.h \
+/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/gui_autogen/WCPGUQ57CZ/moc_MainWindow.cpp: /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/MainWindow.hpp \
+  /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/gui_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \

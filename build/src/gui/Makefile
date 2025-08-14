@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/grisa/SETI_NET
+CMAKE_SOURCE_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/grisa/SETI_NET/build
+CMAKE_BINARY_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/grisa/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/grisa/SETI_NET/build/CMakeFiles /home/grisa/SETI_NET/build/src/gui//CMakeFiles/progress.marks
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/grisa/SETI_NET/build/CMakeFiles 0
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui//CMakeFiles/progress.marks
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/clean
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/preinstall
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/preinstall
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/grisa/SETI_NET/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/gui/CMakeFiles/gui.dir/rule:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/CMakeFiles/gui.dir/rule
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/CMakeFiles/gui.dir/rule
 .PHONY : src/gui/CMakeFiles/gui.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ gui: src/gui/CMakeFiles/gui.dir/rule
 
 # fast build rule for target.
 gui/fast:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/build
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/build
 .PHONY : gui/fast
 
 # Convenience name for target.
 src/gui/CMakeFiles/gui_autogen.dir/rule:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/CMakeFiles/gui_autogen.dir/rule
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/gui/CMakeFiles/gui_autogen.dir/rule
 .PHONY : src/gui/CMakeFiles/gui_autogen.dir/rule
 
 # Convenience name for target.
@@ -141,7 +141,7 @@ gui_autogen: src/gui/CMakeFiles/gui_autogen.dir/rule
 
 # fast build rule for target.
 gui_autogen/fast:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui_autogen.dir/build.make src/gui/CMakeFiles/gui_autogen.dir/build
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui_autogen.dir/build.make src/gui/CMakeFiles/gui_autogen.dir/build
 .PHONY : gui_autogen/fast
 
 MainWindow/MainWindow.o: MainWindow/MainWindow.cpp.o
@@ -149,7 +149,7 @@ MainWindow/MainWindow.o: MainWindow/MainWindow.cpp.o
 
 # target to build an object file
 MainWindow/MainWindow.cpp.o:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o
 .PHONY : MainWindow/MainWindow.cpp.o
 
 MainWindow/MainWindow.i: MainWindow/MainWindow.cpp.i
@@ -157,7 +157,7 @@ MainWindow/MainWindow.i: MainWindow/MainWindow.cpp.i
 
 # target to preprocess a source file
 MainWindow/MainWindow.cpp.i:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.i
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.i
 .PHONY : MainWindow/MainWindow.cpp.i
 
 MainWindow/MainWindow.s: MainWindow/MainWindow.cpp.s
@@ -165,7 +165,7 @@ MainWindow/MainWindow.s: MainWindow/MainWindow.cpp.s
 
 # target to generate assembly for a file
 MainWindow/MainWindow.cpp.s:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.s
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.s
 .PHONY : MainWindow/MainWindow.cpp.s
 
 gui_autogen/mocs_compilation.o: gui_autogen/mocs_compilation.cpp.o
@@ -173,7 +173,7 @@ gui_autogen/mocs_compilation.o: gui_autogen/mocs_compilation.cpp.o
 
 # target to build an object file
 gui_autogen/mocs_compilation.cpp.o:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o
 .PHONY : gui_autogen/mocs_compilation.cpp.o
 
 gui_autogen/mocs_compilation.i: gui_autogen/mocs_compilation.cpp.i
@@ -181,7 +181,7 @@ gui_autogen/mocs_compilation.i: gui_autogen/mocs_compilation.cpp.i
 
 # target to preprocess a source file
 gui_autogen/mocs_compilation.cpp.i:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.i
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.i
 .PHONY : gui_autogen/mocs_compilation.cpp.i
 
 gui_autogen/mocs_compilation.s: gui_autogen/mocs_compilation.cpp.s
@@ -189,7 +189,7 @@ gui_autogen/mocs_compilation.s: gui_autogen/mocs_compilation.cpp.s
 
 # target to generate assembly for a file
 gui_autogen/mocs_compilation.cpp.s:
-	cd /home/grisa/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.s
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(MAKE) $(MAKESILENT) -f src/gui/CMakeFiles/gui.dir/build.make src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.s
 .PHONY : gui_autogen/mocs_compilation.cpp.s
 
 # Help Target
@@ -219,6 +219,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/grisa/SETI_NET/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

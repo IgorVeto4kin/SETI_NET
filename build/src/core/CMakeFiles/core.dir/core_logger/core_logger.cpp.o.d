@@ -1,8 +1,8 @@
 src/core/CMakeFiles/core.dir/core_logger/core_logger.cpp.o: \
- /home/grisa/SETI_NET/src/core/core_logger/core_logger.cpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_logger/core_logger.cpp \
  /usr/include/stdc-predef.h \
- /home/grisa/SETI_NET/src/core/core_logger/core_logger.hpp \
- /home/grisa/SETI_NET/src/core/core_logger/../core_network/core_network.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_logger/core_logger.hpp \
+ /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/core/core_logger/../core_network/core_network.hpp \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \

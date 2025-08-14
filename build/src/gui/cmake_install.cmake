@@ -1,4 +1,4 @@
-# Install script for directory: /home/grisa/SETI_NET/src/gui
+# Install script for directory: /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

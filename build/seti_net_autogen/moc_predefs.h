@@ -4,7 +4,7 @@
 #define __cpp_nontype_template_parameter_auto 201606L
 #define __UINT_LEAST16_MAX__ 0xffff
 #define __ATOMIC_ACQUIRE 2
-#define QT_TESTCASE_BUILDDIR "/home/grisa/SETI_NET/build"
+#define QT_TESTCASE_BUILDDIR "/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build"
 #define __FLT128_MAX_10_EXP__ 4932
 #define __FLT_MIN__ 1.17549435082228750796873653722224568e-38F
 #define __GCC_IEC_559_COMPLEX 2
@@ -168,7 +168,7 @@
 #define __FLT64X_MIN_EXP__ (-16381)
 #define __SIZEOF_WINT_T__ 4
 #define __LONG_LONG_WIDTH__ 64
-#define QT_TESTCASE_SOURCEDIR "/home/grisa/SETI_NET"
+#define QT_TESTCASE_SOURCEDIR "/home/igor_veto4kin/experiments/work_OKB/SETI_NET"
 #define __cpp_initializer_lists 200806L
 #define __FLT32_MAX_EXP__ 128
 #define ABI_ID "ELF"
@@ -217,7 +217,7 @@
 #define __STDC_IEC_60559_COMPLEX__ 201404L
 #define __cpp_aggregate_bases 201603L
 #define __FLT128_HAS_DENORM__ 1
-#define PROJECT_ROOT_DIR "/home/grisa/SETI_NET"
+#define PROJECT_ROOT_DIR "/home/igor_veto4kin/experiments/work_OKB/SETI_NET"
 #define __FLT32_DECIMAL_DIG__ 9
 #define __FLT128_DIG__ 33
 #define __INT32_C(c) c

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/grisa/SETI_NET
+CMAKE_SOURCE_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/grisa/SETI_NET/build
+CMAKE_BINARY_DIR = /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build
 
 # Include any dependencies generated for this target.
 include src/gui/CMakeFiles/gui.dir/depend.make
@@ -72,30 +72,30 @@ include src/gui/CMakeFiles/gui.dir/flags.make
 src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o: src/gui/CMakeFiles/gui.dir/flags.make
 src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o: src/gui/gui_autogen/mocs_compilation.cpp
 src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o: src/gui/CMakeFiles/gui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o"
-	cd /home/grisa/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o -MF CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o -c /home/grisa/SETI_NET/build/src/gui/gui_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o -MF CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o -c /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/gui_autogen/mocs_compilation.cpp
 
 src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.i"
-	cd /home/grisa/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/grisa/SETI_NET/build/src/gui/gui_autogen/mocs_compilation.cpp > CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.i
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/gui_autogen/mocs_compilation.cpp > CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.i
 
 src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.s"
-	cd /home/grisa/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/grisa/SETI_NET/build/src/gui/gui_autogen/mocs_compilation.cpp -o CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.s
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/gui_autogen/mocs_compilation.cpp -o CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.s
 
 src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o: src/gui/CMakeFiles/gui.dir/flags.make
 src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o: ../src/gui/MainWindow/MainWindow.cpp
 src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o: src/gui/CMakeFiles/gui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o"
-	cd /home/grisa/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o -MF CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o.d -o CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o -c /home/grisa/SETI_NET/src/gui/MainWindow/MainWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o -MF CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o.d -o CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o -c /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/MainWindow.cpp
 
 src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.i"
-	cd /home/grisa/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/grisa/SETI_NET/src/gui/MainWindow/MainWindow.cpp > CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.i
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/MainWindow.cpp > CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.i
 
 src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.s"
-	cd /home/grisa/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/grisa/SETI_NET/src/gui/MainWindow/MainWindow.cpp -o CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.s
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui/MainWindow/MainWindow.cpp -o CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.s
 
 # Object files for target gui
 gui_OBJECTS = \
@@ -109,19 +109,19 @@ src/gui/libgui.a: src/gui/CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o
 src/gui/libgui.a: src/gui/CMakeFiles/gui.dir/MainWindow/MainWindow.cpp.o
 src/gui/libgui.a: src/gui/CMakeFiles/gui.dir/build.make
 src/gui/libgui.a: src/gui/CMakeFiles/gui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/grisa/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libgui.a"
-	cd /home/grisa/SETI_NET/build/src/gui && $(CMAKE_COMMAND) -P CMakeFiles/gui.dir/cmake_clean_target.cmake
-	cd /home/grisa/SETI_NET/build/src/gui && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gui.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libgui.a"
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && $(CMAKE_COMMAND) -P CMakeFiles/gui.dir/cmake_clean_target.cmake
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gui.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/gui/CMakeFiles/gui.dir/build: src/gui/libgui.a
 .PHONY : src/gui/CMakeFiles/gui.dir/build
 
 src/gui/CMakeFiles/gui.dir/clean:
-	cd /home/grisa/SETI_NET/build/src/gui && $(CMAKE_COMMAND) -P CMakeFiles/gui.dir/cmake_clean.cmake
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui && $(CMAKE_COMMAND) -P CMakeFiles/gui.dir/cmake_clean.cmake
 .PHONY : src/gui/CMakeFiles/gui.dir/clean
 
 src/gui/CMakeFiles/gui.dir/depend:
-	cd /home/grisa/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/grisa/SETI_NET /home/grisa/SETI_NET/src/gui /home/grisa/SETI_NET/build /home/grisa/SETI_NET/build/src/gui /home/grisa/SETI_NET/build/src/gui/CMakeFiles/gui.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/igor_veto4kin/experiments/work_OKB/SETI_NET /home/igor_veto4kin/experiments/work_OKB/SETI_NET/src/gui /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui /home/igor_veto4kin/experiments/work_OKB/SETI_NET/build/src/gui/CMakeFiles/gui.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/gui/CMakeFiles/gui.dir/depend
 
