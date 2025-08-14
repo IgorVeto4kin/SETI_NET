@@ -1,0 +1,12 @@
+/home/grisa/SETI_NET/build/CMakeFiles/seti_net.dir
+/home/grisa/SETI_NET/build/CMakeFiles/edit_cache.dir
+/home/grisa/SETI_NET/build/CMakeFiles/rebuild_cache.dir
+/home/grisa/SETI_NET/build/CMakeFiles/seti_net_autogen.dir
+/home/grisa/SETI_NET/build/src/core/CMakeFiles/core.dir
+/home/grisa/SETI_NET/build/src/core/CMakeFiles/edit_cache.dir
+/home/grisa/SETI_NET/build/src/core/CMakeFiles/rebuild_cache.dir
+/home/grisa/SETI_NET/build/src/core/CMakeFiles/core_autogen.dir
+/home/grisa/SETI_NET/build/src/gui/CMakeFiles/gui.dir
+/home/grisa/SETI_NET/build/src/gui/CMakeFiles/edit_cache.dir
+/home/grisa/SETI_NET/build/src/gui/CMakeFiles/rebuild_cache.dir
+/home/grisa/SETI_NET/build/src/gui/CMakeFiles/gui_autogen.dir

@@ -1,0 +1,13 @@
+{
+  Qt-related false positive - QDBusConnectionManager
+  Memcheck:Leak
+  obj:/usr/lib/libQt5DBus.so.5.15.16
+  obj:/usr/lib/libQt6DBus.so.6.8.2
+}
+
+{
+  Qt-related false positive - QXcbIntegration
+  Memcheck:Leak
+  obj:/usr/lib/libQt5XcbQpa.so.5.15.16
+  obj:/usr/lib/libQt6XcbQpa.so.6.8.2
+}

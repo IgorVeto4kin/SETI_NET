@@ -1,14 +1,16 @@
-#include "gui/mainwindow.h"
 #include <QApplication>
+#include <QDebug>
+#include <QFile>
 
-int main(int argc, char *argv[])
-{
-    //call mainwindow
-    QApplication app(argc, argv);
-    MainWindow window;
-    window.show();
-    window.displayNetworkInfo();
-    return app.exec();
+#include "gui/MainWindow/MainWindow.hpp"
+
+int main(int argc, char *argv[]) {
+  QApplication app(argc, argv);
+  MainWindow window;
+  window.show();
+  window.displayNetworkInfo();
+    
+
+  
+  return app.exec();
 }
-
-

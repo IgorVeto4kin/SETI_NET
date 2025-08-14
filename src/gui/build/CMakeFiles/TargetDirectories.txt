@@ -1,0 +1,4 @@
+/home/grisa/qtsectemplate/src/gui/build/CMakeFiles/gui.dir
+/home/grisa/qtsectemplate/src/gui/build/CMakeFiles/edit_cache.dir
+/home/grisa/qtsectemplate/src/gui/build/CMakeFiles/rebuild_cache.dir
+/home/grisa/qtsectemplate/src/gui/build/CMakeFiles/gui_autogen.dir
