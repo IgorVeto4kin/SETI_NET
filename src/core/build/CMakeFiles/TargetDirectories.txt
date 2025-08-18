@@ -1,4 +1,0 @@
-/home/grisa/qtsectemplate/src/core/build/CMakeFiles/core.dir
-/home/grisa/qtsectemplate/src/core/build/CMakeFiles/edit_cache.dir
-/home/grisa/qtsectemplate/src/core/build/CMakeFiles/rebuild_cache.dir
-/home/grisa/qtsectemplate/src/core/build/CMakeFiles/core_autogen.dir
