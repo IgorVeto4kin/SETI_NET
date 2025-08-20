@@ -20,7 +20,7 @@ QString LogWriter::getConfigDirectory() const {
 
         // Check if marker file exists in current directory
         if (dir.exists(".project_root")) {
-            QString configPath = dir.filePath("config");
+            QString configPath = dir.filePath("available_interfaces");
             qDebug() << "Found .project_root! Config path:" << configPath;
             return configPath;
         }
@@ -34,7 +34,7 @@ QString LogWriter::getConfigDirectory() const {
 
     // Fallback if marker not found (development environment)
     QString fallbackPath = QDir::cleanPath(
-        QCoreApplication::applicationDirPath() + "/../../config"
+        QCoreApplication::applicationDirPath() + "/../../available_interfaces"
     );
     
     qWarning() << "Using fallback config path:" << fallbackPath;
@@ -51,7 +51,6 @@ QJsonObject LogWriter::InterfaceToJSON(const NetworkInfo::InterfaceInfo &interfa
     obj["ipv6"] = interface.ipv6;
     return obj;
 }
-
 
 void LogWriter::LogWriteAllInterfaces(const QList<NetworkInfo::InterfaceInfo>& interfaces) {
     const QString configDir = getConfigDirectory();
