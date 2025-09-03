@@ -195,3 +195,112 @@ if(ENABLE_PROFILING)
   include(config/profiling.cmake)
 endif()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ void MainWindow::setupUi() {
+        setWindowTitle("SETI NET");
+        resize(500, 500);
+
+        // Create the central widget and its layout
+        QWidget *centralWidget = new QWidget(this);
+        QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
+        setCentralWidget(centralWidget);
+
+        // Create the tab widget
+        QTabWidget *tabWidget = new QTabWidget(this);
+        mainLayout->addWidget(tabWidget);
+
+        // --- Tab 1: Buttons ---
+        QWidget *tab1 = new QWidget();
+        QVBoxLayout *tab1Layout = new QVBoxLayout(tab1);
+        tab1Layout->setContentsMargins(20, 20, 20, 20);
+        tab1Layout->setSpacing(15);
+
+        // Create container for buttons with left alignment
+        QHBoxLayout *buttonLayout = new QHBoxLayout();
+        buttonLayout->setAlignment(Qt::AlignLeft);
+
+        // Create buttons with uniform style and size
+        QPushButton *refreshButton = new QPushButton("Refresh Data", tab1);
+        QPushButton *importConfigButton = new QPushButton("Import Config", tab1);
+        QPushButton *logButton = new QPushButton("Write Log", tab1);
+        QPushButton *exitButton = new QPushButton("Exit", tab1);
+
+        const QSize buttonSize(160, 35);
+        refreshButton->setFixedSize(buttonSize);
+        importConfigButton->setFixedSize(buttonSize);
+        logButton->setFixedSize(buttonSize);
+        exitButton->setFixedSize(buttonSize);
+
+        // Button style with improved readability
+        QString buttonStyle = "QPushButton {"
+                            "  background-color: rgb(2, 132, 255);"
+                            "  color: white;" // Ensure text is readable
+                            "  border: 1px solid #d0d0d0;"
+                            "  border-radius: 4px;"
+                            "  padding: 5px;"
+                            "  font-size: 14px;"
+                            "}"
+                            "QPushButton:hover {"
+                            "  background-color: rgb(12, 93, 214);"
+                            "}";
+
+        refreshButton->setStyleSheet(buttonStyle);
+        importConfigButton->setStyleSheet(buttonStyle);
+        logButton->setStyleSheet(buttonStyle);
+        exitButton->setStyleSheet(buttonStyle);
+
+        // Connect signals to slots
+        connect(refreshButton, &QPushButton::clicked, this, &MainWindow::RefreshClicked);
+        connect(logButton, &QPushButton::clicked, this, &MainWindow::LogWriteClicked);
+        connect(exitButton, &QPushButton::clicked, this, &MainWindow::ExitClicked);
+        connect(importConfigButton, &QPushButton::clicked, this, &MainWindow::ImportConfigClicked);
+
+        // Add buttons to button layout
+        buttonLayout->addWidget(refreshButton);
+        buttonLayout->addWidget(logButton);
+        buttonLayout->addWidget(importConfigButton);
+        buttonLayout->addWidget(exitButton);
+
+        // Add button layout and stretch to tab1 layout
+        tab1Layout->addLayout(buttonLayout);
+        tab1Layout->addStretch();
+
+        // Add tab1 to tabWidget
+        tabWidget->addTab(tab1, "Control bottons");
+
+        // --- Tab 2: LineEdit and Button ---
+        QWidget *tab2 = new QWidget();
+        QVBoxLayout *tab2Layout = new QVBoxLayout(tab2);
+        tab2Layout->setContentsMargins(20, 20, 20, 20);
+        tab2Layout->setSpacing(15);
+
+        QLineEdit *lineEdit = new QLineEdit("IP-address",tab2);
+        QPushButton *readButton = new QPushButton("Apply", tab2);
+        readButton->setStyleSheet(buttonStyle); 
+        readButton->setFixedSize(buttonSize);  
+
+        
+        QLabel *titleLabel = new QLabel( tab2);
+        titleLabel->setStyleSheet("QLabel { font-weight: bold; font-size: 14px; }");
+
+        lineEdit->setPlaceholderText("192.168.1.1");
+
+        tab2Layout->addWidget(lineEdit);
+        tab2Layout->addWidget(readButton);
+        tab2Layout->addStretch();
+
+        // Add tab2 to tabWidget
+        tabWidget->addTab(tab2, "Manual Config");
+    }

@@ -18,6 +18,7 @@ private:
     QString m_logPath = "/configs/network_interfaces.json";
     bool ensureConfigDirExists() const;
     QJsonArray interfacesToJson(const QList<NetworkInfo::InterfaceInfo>& interfaces) const;
+ //   void amdz_db_ui_save_netconfig(amdz_handle_t h, const amdz_net_config_t *amdz_net_config);
 };
 
 #endif // LOGWRITER_H

@@ -11,8 +11,16 @@ set(CMAKE_AUTORCC ON)
 add_library(${MODULE_NAME} STATIC
   ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_apply/${MODULE_NAME}_apply.hpp
   ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_apply/${MODULE_NAME}_apply.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_apply/${MODULE_NAME}_apply_apply_from_json.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_apply/${MODULE_NAME}_apply_netmask_to_prefix.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_apply/${MODULE_NAME}_apply_verify_mac.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_apply/${MODULE_NAME}_apply_run_command.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_logger/${MODULE_NAME}_logger.hpp
   ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_logger/${MODULE_NAME}_logger.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_logger/${MODULE_NAME}_logger_json_processsing.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_logger/${MODULE_NAME}_logger_find_config.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_logger/${MODULE_NAME}_logger_logwrite.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_logger/${MODULE_NAME}_logger_write_to_amdz.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_network/${MODULE_NAME}_network.hpp
   ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE_NAME}_network/${MODULE_NAME}_network.cpp
 )

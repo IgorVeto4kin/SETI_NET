@@ -11,6 +11,7 @@ set(CMAKE_AUTORCC ON)
 add_library(${MODULE_NAME} STATIC
   ${CMAKE_CURRENT_SOURCE_DIR}/MainWindow/MainWindow.hpp
   ${CMAKE_CURRENT_SOURCE_DIR}/MainWindow/MainWindow.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/MainWindow/buttons.cpp
 )
 
 set_target_properties(${MODULE_NAME} PROPERTIES LIBRARY_TYPE STATIC)

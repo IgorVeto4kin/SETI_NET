@@ -3,7 +3,6 @@
 #include "../../core/core_logger/core_logger.hpp"
 #include "../../core/core_network/core_network.hpp"
 
-
 #include <QLabel>
 #include <QPushButton>
 #include <QCoreApplication>    
@@ -66,9 +65,12 @@ void MainWindow::setupUi() {
     QPushButton *refreshButton = new QPushButton("Refresh Data", tab1);
     QPushButton *importConfigButton = new QPushButton("Import Config", tab1);
     QPushButton *logButton = new QPushButton("Write Log", tab1);
+    QPushButton *DHCPButton = new QPushButton("DHCP", tab1);
     QPushButton *exitButton = new QPushButton("Exit", tab1);
 
     const QSize buttonSize(160, 35);
+
+    DHCPButton->setFixedSize(buttonSize);
     refreshButton->setFixedSize(buttonSize);
     importConfigButton->setFixedSize(buttonSize);
     logButton->setFixedSize(buttonSize);
@@ -77,7 +79,7 @@ void MainWindow::setupUi() {
     // Button style with improved readability
     QString buttonStyle = "QPushButton {"
                          "  background-color: rgb(2, 132, 255);"
-                         "  color: white;" // Ensure text is readable
+                         "  color: white;"
                          "  border: 1px solid #d0d0d0;"
                          "  border-radius: 4px;"
                          "  padding: 5px;"
@@ -88,6 +90,7 @@ void MainWindow::setupUi() {
                          "}";
 
     refreshButton->setStyleSheet(buttonStyle);
+    DHCPButton->setStyleSheet(buttonStyle);
     importConfigButton->setStyleSheet(buttonStyle);
     logButton->setStyleSheet(buttonStyle);
     exitButton->setStyleSheet(buttonStyle);
@@ -97,9 +100,12 @@ void MainWindow::setupUi() {
     connect(logButton, &QPushButton::clicked, this, &MainWindow::LogWriteClicked);
     connect(exitButton, &QPushButton::clicked, this, &MainWindow::ExitClicked);
     connect(importConfigButton, &QPushButton::clicked, this, &MainWindow::ImportConfigClicked);
+    connect(DHCPButton, &QPushButton::clicked, this, &MainWindow::DHCPClicked);
 
     // Add buttons to button layout
+
     buttonLayout->addWidget(refreshButton);
+    buttonLayout->addWidget(DHCPButton);
     buttonLayout->addWidget(logButton);
     buttonLayout->addWidget(importConfigButton);
     buttonLayout->addWidget(exitButton);
@@ -111,24 +117,62 @@ void MainWindow::setupUi() {
     // Add tab1 to tabWidget
     tabWidget->addTab(tab1, "Control bottons");
 
-    // --- Tab 2: LineEdit and Button ---
+    // --- Tab 2: Two LineEdits with Labels and Button ---
     QWidget *tab2 = new QWidget();
     QVBoxLayout *tab2Layout = new QVBoxLayout(tab2);
     tab2Layout->setContentsMargins(20, 20, 20, 20);
     tab2Layout->setSpacing(15);
 
-    QLineEdit *lineEdit = new QLineEdit(tab2);
-    QPushButton *button = new QPushButton("Отправить", tab2);
-    button->setStyleSheet(buttonStyle); // Apply same style to button
-    button->setFixedSize(buttonSize);   // Apply same size to button
+    // First input: Label and LineEdit for IP Address
+    QHBoxLayout *ipLayout = new QHBoxLayout();
+    QLabel *ipLabel = new QLabel("IP Address:", tab2);
+    ipLabel->setStyleSheet("QLabel { font-weight: bold; font-size: 14px; }");
+    QLineEdit *ipLineEdit = new QLineEdit(tab2);
+    ipLineEdit->setPlaceholderText("192.168.1.1");
+    ipLayout->addWidget(ipLabel);
+    ipLayout->addWidget(ipLineEdit);
+    ipLayout->addStretch(); // Add stretch to push label and line edit to the left
 
-    tab2Layout->addWidget(lineEdit);
-    tab2Layout->addWidget(button);
+    // Second input: Label and LineEdit for Port
+    QHBoxLayout *subnetLayout = new QHBoxLayout();
+    QLabel *subnetLabel = new QLabel("Subnet Mask:", tab2);
+    subnetLabel->setStyleSheet("QLabel { font-weight: bold; font-size: 14px; }");
+    QLineEdit *subnetLineEdit = new QLineEdit(tab2);
+    subnetLineEdit->setPlaceholderText("255.255.255.0");
+    subnetLayout->addWidget(subnetLabel);
+    subnetLayout->addWidget(subnetLineEdit);
+    subnetLayout->addStretch(); // Add stretch to push label and line edit to the left
+    //-----------------------------------------------
+    QHBoxLayout *intnameLayout = new QHBoxLayout();
+    QLabel *intnameLabel = new QLabel("Interface Name(optional):", tab2);
+    intnameLabel->setStyleSheet("QLabel { font-weight: bold; font-size: 14px; }");
+    QLineEdit *intnameLineEdit = new QLineEdit(tab2);
+    intnameLineEdit->setPlaceholderText("eth");
+    intnameLayout->addWidget(intnameLabel);
+    intnameLayout->addWidget(intnameLineEdit);
+    intnameLayout->addStretch();
+
+
+    // Apply button
+    QPushButton *readButton = new QPushButton("Apply", tab2);
+    readButton->setStyleSheet(buttonStyle);
+    readButton->setFixedSize(buttonSize);
+    //save input button
+    QPushButton *SaveconfButton = new QPushButton("Save Input config", tab2);
+    SaveconfButton->setStyleSheet(buttonStyle);
+    SaveconfButton->setFixedSize(buttonSize);
+
+    // Add layouts and button to tab2 layout
+     tab2Layout->addLayout(intnameLayout);
+    tab2Layout->addLayout(ipLayout);
+    tab2Layout->addLayout(subnetLayout);
+    tab2Layout->addWidget(readButton);
+    tab2Layout->addWidget(SaveconfButton);
     tab2Layout->addStretch();
 
     // Add tab2 to tabWidget
     tabWidget->addTab(tab2, "Manual Config");
-}
+}   
 
 void MainWindow::addPropertyRow(QGridLayout* layout, int row, 
     const QString& header, const QString& value,
@@ -179,40 +223,6 @@ void MainWindow::displayNetworkInfo(){
         m_interfaceGroups.append(interfaceGroup);  // Сохраняем указатель
     }
     
-}
-
-void MainWindow::LogWriteClicked(){
-    NetworkInfo networkInfo;
-    auto interfaces = networkInfo.getNetworkInterfaces();
-    LogWriter logger;  
-    logger.LogWriteAllInterfaces(interfaces); 
-}
-
-void MainWindow::RefreshClicked(){
-    clearInterfaceWidgets();
-    displayNetworkInfo();
-}
-
-void MainWindow::ImportConfigClicked(){
-    QString filePath = QFileDialog::getOpenFileName(
-        this,                            // Родительское окно
-        tr("Choose JSON-file"),        // Заголовок окна
-        QDir::homePath(),                // Стартовая директория
-        tr("JSON файлы (*.json);;Все файлы (*)") // Фильтры
-    );
-
-    if(filePath.isEmpty()) {
-        qDebug() << "Canceled";
-        return;
-    }
-
-    qDebug() << "Choosen file:" << filePath;
-    NetworkConfigManager manager;
-    manager.applySettingsFromJson(filePath);
-}
-
-void MainWindow::ExitClicked(){
-    QCoreApplication::quit();
 }
 
 

@@ -28,6 +28,7 @@ class MainWindow : public QMainWindow
     void LogWriteClicked();
     void RefreshClicked();
     void ImportConfigClicked();
+    void DHCPClicked();
 
 };
 
